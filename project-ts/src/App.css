@@ -1,0 +1,27 @@
+*{
+  box-sizing: border-box;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+}
+
+ul{
+  display: flex;
+  list-style: none;
+}
+
+li{
+  padding-right: 10px;
+}
+
+.bio-info{
+  width: 200px;
+}
+
+.shelf{
+  border: 2px solid black;
+  width: 200px;
+  height: 200px;
+}
