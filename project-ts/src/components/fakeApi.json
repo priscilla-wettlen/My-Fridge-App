@@ -1,7 +1,10 @@
 [
   {
-    "id": 0,
-    "name": "apples",
-    "url": "../public/apples.jpg"
+    "id": 1,
+    "item": {"name": "Apple", "url": "../public/apples.jpg"}
+  },
+  {
+    "id": 2,
+    "item": {"name": "Banana", "url": "../public/banana.jpg"}
   }
 ]

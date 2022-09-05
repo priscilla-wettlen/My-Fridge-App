@@ -1,7 +1,7 @@
 const Bio = () => {
-  const name = "Priscilla";
-  const location = "Malmö";
-  const diet = "Omnivore";
+  const name:string = "Priscilla";
+  const location:string = "Malmö";
+  const diet:string = "Omnivore";
   return ( 
     <section className="user-bio">
     <svg 

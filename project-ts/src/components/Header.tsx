@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Header = () => {
-  const logo = "My Fridge";
+  const logo:string = "My Fridge";
   return (  
     <header>
       <h1>{logo}</h1>
