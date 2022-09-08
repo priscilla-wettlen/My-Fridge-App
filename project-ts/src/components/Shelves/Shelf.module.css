@@ -1,0 +1,16 @@
+.container{
+  display: flex;
+  justify-content:flex-start;
+}
+.shelf{
+  border: 2px solid black;
+  width: 250px;
+  height: 250px;
+  margin-right: 10px;
+}
+
+img {
+  width: 245px;
+  height: 245px;
+  object-fit: cover;
+}

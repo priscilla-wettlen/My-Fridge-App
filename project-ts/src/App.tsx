@@ -3,14 +3,15 @@ import './App.css';
 import User from './User';
 
 
-function App() {
 
+
+function App() {
   return (
-    <div className="App">
-      <User />
-      
+    <div className='App'>
+    <User />
+    
     </div>
-  );
+  )
 }
 
 export default App;

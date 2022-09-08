@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Britney S",
+    "location": "Hollywood, CA",
+    "diet": "Omnivore",
+    "url": "img/user1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Madonna C",
+    "location": "Hollywood, CA",
+    "diet": "Vegetarian",
+    "url": "img/user2.jpg"
+  }
+  ]
+  
