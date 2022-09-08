@@ -13,7 +13,7 @@ const Shelf = () => {
     {
       FoodItems.map(food => {
         return (
-          <div>
+          <div key={food.id}>
             {food.name}
             {food.url}
           </div>
