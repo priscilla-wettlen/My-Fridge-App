@@ -1,14 +1,14 @@
 import './Header.modules.css'; 
 
 const Header = () => {
-  const logo = "My Fridge";
+  const logo = "myfridge";
   const yourFridge = "Your Fridge"
   const yourFriends = "Your Friends"
   const about = "About My Fridge"
   const logout = "Logout"
   return (  
     <header>
-      <h1>{logo}</h1>
+      <h1 className='logo'>{logo}</h1>
       <nav>
         <ul className="ul">
           <li className="li">{yourFridge}</li>

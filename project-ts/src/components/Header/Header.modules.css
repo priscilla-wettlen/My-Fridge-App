@@ -1,6 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap');
+
 header{
   display: flex;
   justify-content: space-between;
+}
+
+header, .logo, nav, ul, li {
+  background-color: #F27166;
+}
+
+.logo{
+  font-family:  'Comfortaa', cursive;
+  color: #244020;
+  font-size: 3rem;
+  letter-spacing: -2px;
 }
 
 .ul{
@@ -9,5 +22,7 @@ header{
 }
 
 .li{
+  font-family: 'Roboto', sans-serif;
   padding-right: 20px;
+  color: #244020;
 }

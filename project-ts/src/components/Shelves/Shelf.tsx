@@ -5,17 +5,17 @@ import FoodItems from '../foodsAPI.json';
 type ShelfProps = {
   id?: number,
   item: string,
-  amount?: number,
-  description?: string,
+  amount: number,
+  description: string,
   url?: string,
 }
 
 const ShelfItems = (props: ShelfProps) => {
   return (
     <div>
-      <p>{props.item}</p>
-      <p>{props.amount}</p>
-      <p>{props.description}</p>
+      <h3 className={styles.item}>{props.item}</h3>
+      <p className={styles.amnt}>{props.amount}</p>
+      <p className={styles.desc}>{props.description}</p>
     </div>
   );
 }
