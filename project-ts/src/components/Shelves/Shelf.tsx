@@ -3,12 +3,20 @@ import styles from './Shelf.module.css';
 import FoodItems from '../foodsAPI.json';
 
 type ShelfProps = {
-  id: number,
+  id?: number,
   name: string,
-  url: string,
+  url?: string,
 }
 
-const Shelf = (props:ShelfProps) => {
+const ShelfItems = (props: ShelfProps) => {
+  return (
+    <div>
+      <p>{props.name}</p>
+    </div>
+  );
+}
+
+const Shelf = () => {
   return (
   <div className={styles.container}>
     {
@@ -16,6 +24,7 @@ const Shelf = (props:ShelfProps) => {
         return (
           <div className={styles.shelf} key={food.id}>
             <img src={food.url} width={200} alt="" />
+            <ShelfItems name={food.name} />
           </div>
         )
       })
