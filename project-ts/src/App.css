@@ -1,20 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=Montserrat:ital,wght@0,400;0,500;1,400&display=swap');
+
 *{
   box-sizing: border-box;
+  background-color: #C4F2CB;
 }
 
-header{
-  display: flex;
-  justify-content: space-between;
-}
-
-ul{
-  display: flex;
-  list-style: none;
-}
-
-li{
-  padding-right: 10px;
-}
 
 
 

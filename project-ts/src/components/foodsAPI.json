@@ -1,12 +1,16 @@
 [
   {
     "id": 1,
-    "name": "Apple",
+    "item": "Apple",
+    "amount": 6,
+    "description": "Good",
     "url": "img/apples.jpg"
   },
   {
     "id": 2,
-    "name": "Banana",
+    "item": "Banana",
+    "amount": 1,
+    "description": "Excellent",
     "url": "img/banana.jpg"
   }
   ]
