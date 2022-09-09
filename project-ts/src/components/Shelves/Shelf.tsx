@@ -2,13 +2,13 @@
 import styles from './Shelf.module.css'; 
 import FoodItems from '../foodsAPI.json';
 
-type Shelf = {
+type ShelfProps = {
   id: number,
   name: string,
   url: string,
 }
 
-const Shelf = () => {
+const Shelf = (props:ShelfProps) => {
   return (
   <div className={styles.container}>
     {

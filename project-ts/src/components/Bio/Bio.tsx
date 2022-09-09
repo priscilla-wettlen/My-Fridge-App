@@ -1,14 +1,23 @@
 import styles from './Bio.module.css'; 
 import userList from '../userList.json';
 
-type Bio ={
+type BioProps = {
     name: string,
-    location: string,
-  diet: string
-    url:string
-  } 
+    location?: string,
+    diet: string
+    url?:string
+} 
+const Profile = (props: BioProps) => {
+  return (
+    <div>
+      <h2>{props.name}</h2>
+      <h3>{props.location}</h3>
+      <h3>{props.diet}</h3>
+    </div>
+  );
+};
+
 const Bio = () => {
-  console.log(userList)
   return ( 
     <div className={styles.userBio}>
       <div className={styles.userImage}>
@@ -17,9 +26,7 @@ const Bio = () => {
       <br />
       <br />
       <div className={styles.userInfo}>
-        <h2>{userList[0].name}</h2>
-        <h3>{userList[0].location}</h3>
-        <h3>{userList[0].diet}</h3>
+        <Profile name={userList[0].name} location={userList[0].location} diet={userList[0].diet} />
       </div>
    </div>
    );
