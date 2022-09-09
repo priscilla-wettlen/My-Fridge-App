@@ -6,13 +6,13 @@ header{
 }
 
 header, .logo, nav, ul, li {
-  background-color: #F27166;
+  background-color: #ffa39b;
 }
 
 .logo{
   font-family:  'Comfortaa', cursive;
   color: #244020;
-  font-size: 3rem;
+  font-size: 2rem;
   letter-spacing: -2px;
 }
 
