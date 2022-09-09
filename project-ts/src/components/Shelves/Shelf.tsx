@@ -1,7 +1,8 @@
-import { useState } from 'react';
+//import { useState } from 'react';
+import styles from './Shelf.module.css'; 
 import FoodItems from '../foodsAPI.json';
 
-type Food = {
+type Shelf = {
   id: number,
   name: string,
   url: string,
@@ -9,13 +10,12 @@ type Food = {
 
 const Shelf = () => {
   return (
-  <div>
+  <div className={styles.container}>
     {
       FoodItems.map(food => {
         return (
-          <div key={food.id}>
-            {food.name}
-            {food.url}
+          <div className={styles.shelf} key={food.id}>
+            <img src={food.url} width={200} alt="" />
           </div>
         )
       })
