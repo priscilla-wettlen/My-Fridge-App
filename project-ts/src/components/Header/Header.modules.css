@@ -3,10 +3,13 @@
 header{
   display: flex;
   justify-content: space-between;
+  padding: 1rem;
 }
 
 header, .logo, nav, ul, li {
-  background-color: #ffa39b;
+  background-color: white;
+  
+  
 }
 
 .logo{

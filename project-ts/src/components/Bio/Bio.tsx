@@ -3,7 +3,9 @@ import userList from '../userList.json';
 
 type BioProps = {
     name: string,
-    location?: string,
+  location?: string,
+  city: string,
+    km: string,
   diet: string,
     bio:string,
     url?:string
@@ -12,7 +14,8 @@ const Profile = (props: BioProps) => {
   return (
     <div>
       <h2 className={styles.name}>{props.name}</h2>
-      <p className={styles.location}>{props.location}</p>
+      <p className={styles.city}>{props.city}</p>
+      <p className={styles.km}>{props.km}</p>
       <p className={styles.diet}>{props.diet}</p>
       <p className={styles.bio}>{props.bio}</p>
     </div>
@@ -29,7 +32,7 @@ const Bio = () => {
       <br />
       <br />
       <div className={styles.userInfo}>
-        <Profile name={userList[0].name} location={userList[0].location} diet={userList[0].diet} bio={userList[0].bio} />
+        <Profile name={userList[0].name} city={userList[0].location.city} km={`${userList[0].location.km} km`} diet={userList[0].diet} bio={userList[0].bio} />
       </div>
    </div>
    );

@@ -2,13 +2,15 @@
 
 .userBio{
   width: 300px;
+  padding: 2rem;
 }
 
-.name, .location, .diet, .bio{
+.name, .city, .km, .diet, .bio{
   font-family: 'Roboto', sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
-  line-height: 50%;
+  margin-top: 2%;
+  
 }
 
 .name{
@@ -19,6 +21,7 @@
 .bio{
   line-height: 150%;
   font-size: 1rem;
+  margin-top: 8%;
 }
 
 .userImage{

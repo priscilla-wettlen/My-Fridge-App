@@ -2,7 +2,10 @@
   {
     "id": 1,
     "name": "Britney S",
-    "location": "Hollywood, CA",
+    "location": {
+      "city": "Hollywood, CA",
+      "km": 1.5
+    },
     "diet": "Omnivore",
     "bio": "Britney💁🏼‍♀️40yo🥳I love food🍕🍔but hate food waste😒🙅🏼‍♀️",
     "url": "img/user1.png"
@@ -10,7 +13,10 @@
   {
     "id": 2,
     "name": "Madonna C",
-    "location": "Hollywood, CA",
+    "location": {
+      "city": "Hollywood, CA",
+      "km": 2
+    },
     "diet": "Vegan",
     "bio": "Madonna💁🏼‍♀️40yo🥳Vegan because I love animals🐮🐷🥕🍉but hate food waste😒🙅🏼‍♀️",
     "url": "img/user2.png"
