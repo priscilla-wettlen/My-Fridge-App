@@ -38,6 +38,7 @@ img {
 
 .item, .amnt, .desc{
   font-family: 'Roboto', sans-serif;
+  color: #244020;
   background-color: white;
   font-size: 0.9rem;
   font-weight: 400;
@@ -46,6 +47,7 @@ img {
 }
 
 .item{
+  color: #F25050;
   font-size: 1.3rem;
   font-weight: 500;
 }

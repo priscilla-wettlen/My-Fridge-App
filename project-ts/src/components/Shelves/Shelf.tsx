@@ -28,7 +28,7 @@ const Shelf = () => {
     <div className={styles.container}>
     {
         FoodItems.map(food => {
-          return food.amount <= 1 ?
+          return food.amount <= 1 || "string" ?
           <div className={styles.card}>
             <div className={styles.shelf} key={food.id}>
               <img src={food.url} width={200} alt="" />
