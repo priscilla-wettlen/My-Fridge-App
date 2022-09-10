@@ -12,5 +12,27 @@
     "amount": 1,
     "description": "Excellent",
     "url": "img/banana.jpg"
+  },
+  {
+    "id": 3,
+    "item": "Watermelon",
+    "amount": 0.5,
+    "description": "Delicious",
+    "url": "img/watermelon.jpg"
+  },
+  {
+    "id": 4,
+    "item": "Strawberries",
+    "amount": 5,
+    "description": "Last ones of the season!!",
+    "url": "img/strawberries.jpg"
+  },
+  {
+    "id": 5,
+    "item": "Orange",
+    "amount": 2,
+    "description": "Juicy",
+    "url": "img/oranges.jpg"
   }
+
   ]
