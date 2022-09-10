@@ -1,23 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap');
+
+.fruitsAndVeggies{
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle{
+  font-family: 'Roboto', sans-serif;
+  margin-left: 2rem;
+}
+
 .container{
   display: flex;
   justify-content:flex-start;
 }
+
+.card{
+  border-radius: 5%;
+  background-color: white;
+  margin: 1rem 0.1rem 1rem 2rem;
+  padding: 2rem 2rem 6rem 2rem;
+}
 .shelf{
-  border: 2px solid black;
   width: 250px;
   height: 250px;
-  margin: 2rem;
+  background-color: white;
 }
 
 img {
   width: 245px;
   height: 245px;
   object-fit: cover;
+  background-color: white;
 }
 
 .item, .amnt, .desc{
   font-family: 'Roboto', sans-serif;
+  background-color: white;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 50%;
