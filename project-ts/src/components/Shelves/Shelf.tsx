@@ -5,7 +5,7 @@ import FoodItems from '../foodsAPI.json';
 type ShelfProps = {
   id?: number,
   item: string,
-  amount: number,
+  amount: string,
   description: string,
   url?: string,
 }
@@ -20,17 +20,22 @@ const ShelfItems = (props: ShelfProps) => {
   );
 }
 
+
 const Shelf = () => {
   return (
   <div className={styles.container}>
     {
-      FoodItems.map(food => {
-        return (
+        FoodItems.map(food => {
+        return food.amount === 1 ?
           <div className={styles.shelf} key={food.id}>
             <img src={food.url} width={200} alt="" />
-            <ShelfItems item={food.item} amount={food.amount} description={food.description} />
+            <ShelfItems item={food.item} amount={`${food.amount} piece`} description={food.description} />
           </div>
-        )
+          :
+          <div className={styles.shelf} key={food.id}>
+            <img src={food.url} width={200} alt="" />
+            <ShelfItems item={food.item} amount={`${food.amount} pieces`} description={food.description} />
+          </div>
       })
       }
     </div>
