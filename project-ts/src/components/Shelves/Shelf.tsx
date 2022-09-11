@@ -1,6 +1,7 @@
 //import { useState } from 'react';
 import Card from './Card';
-import styles from './Shelf.module.css'; 
+import Carousel from './Carousel';
+import styles from './Shelf.module.css';
 
 
 
@@ -10,7 +11,7 @@ const Shelf = () => {
     <section className={styles.fruitsAndVeggies}>
       <h3 className={styles.sectionTitle}>Fruits and Veggies</h3>
       <Card />
-      
+      <Carousel />
     </section>
   )
 }
