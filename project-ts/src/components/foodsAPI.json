@@ -1,38 +1,69 @@
 [
   {
-    "id": 1,
-    "item": "Apple",
-    "amount": 6,
-    "description": "Good",
-    "url": "img/apples.jpg"
+    "FruitsAndVegs":[{
+      "id": 1,
+      "item": "Apple",
+      "amount": 6,
+      "description": "Good",
+      "url": "img/apples.jpg"
+    },
+    {
+      "id": 2,
+      "item": "Banana",
+      "amount": 1,
+      "description": "Excellent",
+      "url": "img/banana.jpg"
+    },
+    {
+      "id": 3,
+      "item": "Watermelon",
+      "amount": 0.5,
+      "description": "Delicious",
+      "url": "img/watermelon.jpg"
+    },
+    {
+       "id": 4,
+       "item": "Strawberries",
+       "amount": 5,
+       "description": "Last ones of the season!!",
+       "url": "img/strawberries.jpg"
+    },
+    {
+      "id": 5,
+      "item": "Orange",
+      "amount": 2,
+      "description": "Juicy",
+      "url": "img/oranges.jpg"
+    }
+],
+"DairyProducts":[{
+      "id": 6,
+      "item": "Milk",
+      "amount": 1,
+      "description": "1 liter. Bought it 2 days ago",
+      "url": ""
   },
-  {
-    "id": 2,
-    "item": "Banana",
+{
+      "id": 7,
+      "item": "Cheese",
+      "amount": 0.5,
+      "description": "Still good",
+      "url": ""
+}
+],
+"ReadyToEat":[{
+    "id": 8,
+    "item": "White rice",
     "amount": 1,
-    "description": "Excellent",
-    "url": "img/banana.jpg"
-  },
-  {
-    "id": 3,
-    "item": "Watermelon",
-    "amount": 0.5,
-    "description": "Delicious",
-    "url": "img/watermelon.jpg"
-  },
-  {
-    "id": 4,
-    "item": "Strawberries",
-    "amount": 5,
-    "description": "Last ones of the season!!",
-    "url": "img/strawberries.jpg"
-  },
-  {
-    "id": 5,
-    "item": "Orange",
-    "amount": 2,
-    "description": "Juicy",
-    "url": "img/oranges.jpg"
-  }
-
-  ]
+    "description": "1 plate. Cooked yesterday",
+    "url": ""
+},
+{
+  "id": 9,
+    "item": "Bolognese pasta",
+    "amount": 200,
+    "description": "200 grams. Made two days ago but I can't finish it",
+    "url": ""}
+]
+}
+]

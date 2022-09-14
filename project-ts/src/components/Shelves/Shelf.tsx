@@ -1,18 +1,18 @@
 //import { useState } from 'react';
-import Card from './Card';
-import Carousel from './Carousel';
-import styles from './Shelf.module.css';
-
+//import Card from './Card';
+import FruitsAndVegs from './FruitsAndVegs';
+import DairyProducts from './DairyProducts';
+import ReadyToEat from './ReadyToEat';
 
 
 
 const Shelf = () => {
   return (
-    <section className={styles.fruitsAndVeggies}>
-      <h3 className={styles.sectionTitle}>Fruits and Veggies</h3>
-      <Card />
-      <Carousel />
-    </section>
+    <div>
+      <FruitsAndVegs />
+      <DairyProducts />
+      <ReadyToEat />
+    </div>
   )
 }
 

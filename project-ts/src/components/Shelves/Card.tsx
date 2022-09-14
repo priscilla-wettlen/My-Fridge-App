@@ -1,7 +1,6 @@
-import styles from './Shelf.module.css'; 
-import FoodItems from '../foodsAPI.json';
+import styles from './Shelf.module.css';
 
-type CardInfo = {
+type CardProps = {
   id?: number,
   item: string,
   amount: string,
@@ -9,40 +8,14 @@ type CardInfo = {
   url?: string,
 }
 
-const CardProps = (props: CardInfo) => {
+export const Card= (props: CardProps) => {
   return (
-    <div>
-      <h3 className={styles.item}>{props.item}</h3>
-      <p className={styles.amnt}>{props.amount}</p>
-      <p className={styles.desc}>{props.description}</p>
-    </div>
+      <div className={styles.card}>
+        <img src={props.url} width={200} alt="" />
+        <h3 className={styles.item}>Item: {props.item}</h3>
+        <p className={styles.amnt}>Amount: {props.amount}</p>
+        <p className={styles.desc}>Description: {props.description}</p>
+      </div>
+    
   )
 }
-
-const Card = () => {
-  return (
-    <div className={styles.container}>
-      {
-        FoodItems.map(food => {
-          return food.amount <= 1 ?
-        <div className={styles.card}>
-          <div className={styles.shelf} key={food.id}>
-              <img src={food.url} width={200} alt="" />
-              <CardProps item={food.item} amount={`${food.amount} piece`} description={food.description} />
-              </div>
-        </div>
-            :
-            <div className={styles.card}>
-          <div className={styles.shelf} key={food.id}>
-              <img src={food.url} width={200} alt="" />
-              <CardProps item={food.item} amount={`${food.amount} pieces`} description={food.description} />
-              </div>
-              </div>
-        })
-      }
-      
-    </div>
-  )
-}
-
-export default Card;
