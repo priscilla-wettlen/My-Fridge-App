@@ -41,14 +41,14 @@
       "item": "Milk",
       "amount": 1,
       "description": "1 liter. Bought it 2 days ago",
-      "url": ""
+      "url": "img/milk.avif"
   },
 {
       "id": 7,
       "item": "Cheese",
       "amount": 0.5,
       "description": "Still good",
-      "url": ""
+      "url": "img/cheese.avif"
 }
 ],
 "ReadyToEat":[{
@@ -56,14 +56,43 @@
     "item": "White rice",
     "amount": 1,
     "description": "1 plate. Cooked yesterday",
-    "url": ""
+    "url": "img/white_rice.avif"
 },
 {
   "id": 9,
     "item": "Bolognese pasta",
     "amount": 200,
-    "description": "200 grams. Made two days ago but I can't finish it",
-    "url": ""}
+    "description": "200 grams. Can't finish it",
+    "url": "img/bolognese.avif"
+  },
+  {
+  "id": 10,
+    "item": "Baguette",
+    "amount": 1,
+    "description": "3 days old",
+    "url": "img/baguette.avif"
+  },
+  {
+  "id": 11,
+    "item": "Tamales",
+    "amount": 3,
+    "description": "From last christmas",
+    "url": "img/tamales.avif"
+  },
+  {
+  "id": 12,
+    "item": "Swedish Meatballs",
+    "amount": 5,
+    "description": "Still good",
+    "url": "img/kotbullar.avif"
+  },
+  {
+  "id": 13,
+    "item": "Pesto",
+    "amount": 1,
+    "description": "Bought last week",
+    "url": "img/pesto.avif"
+  }
 ]
 }
 ]
