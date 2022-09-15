@@ -18,6 +18,9 @@
 }
 
 .card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border-radius: 3%;
   background-color: white;
   margin: 2% 2% 2% 2%;
@@ -58,4 +61,21 @@ img {
   margin: 20px;
   align-self: center;
   cursor: pointer;
+}
+
+.requestItem{ 
+  background-color: white;
+  color: #F25050;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #F25050;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.requestItem:hover{
+  background-color: #F25050;
+  color: white;
 }
