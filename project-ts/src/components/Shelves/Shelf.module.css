@@ -73,6 +73,8 @@ img {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   font-weight: 500;
+  cursor: pointer;
+  
 }
 
 .requestItem:hover{

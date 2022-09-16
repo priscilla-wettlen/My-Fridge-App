@@ -24,7 +24,6 @@
   justify-content: flex-end;
   margin: 2% 2% 2% 2%;
   padding: 2% 2% 2% 2%;
-  
 }
 
 .modalContent{
@@ -79,11 +78,15 @@
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   font-weight: 500;
+  cursor: pointer;
+  
 }
 
 .requestItem:hover{
   background-color: #F25050;
   color: white;
+  cursor: pointer;
+  
 }
 
 .cancel{
@@ -96,9 +99,13 @@
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   font-weight: 500;
+  cursor: pointer;
+  
 }
 .cancel:hover{
   border: 1px solid #e34646;
   background-color: #e34646;
   color: white;
+  cursor: pointer;
+  
 }
