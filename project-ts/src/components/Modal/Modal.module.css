@@ -1,0 +1,104 @@
+.modalBg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: rgb(240, 248, 255, 0.6);
+}
+
+.modalContainer{
+  background-color: white;
+  width: 50vw;  
+  height: 60vh;
+  border-radius: 20px;
+}
+
+.CloseIcon{
+  display: flex;
+  justify-content: flex-end;
+  margin: 2% 2% 2% 2%;
+  padding: 2% 2% 2% 2%;
+  
+}
+
+.modalContent{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2%;
+  padding: 2%;
+}
+
+.modalProps{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 2%;
+  padding: 2%;
+}
+
+.item, .amnt, .desc, .message{
+  font-family: 'Roboto', sans-serif;
+  color: #244020;
+  background-color: white;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 100%;
+  margin-top: 1rem;
+}
+
+.item{
+  color: #F25050;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.message{
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.requestItem{ 
+  background-color: white;
+  color: #F25050;
+  margin: 20px 20px 20px 5px;
+  padding: 10px;
+  border: 1px solid #F25050;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.requestItem:hover{
+  background-color: #F25050;
+  color: white;
+}
+
+.cancel{
+  background-color: #F25050;
+  color: white;
+  margin: 20px 5px 20px 20px;
+  padding: 10px 25px 10px 25px;
+  border: 1px solid #F25050;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.cancel:hover{
+  border: 1px solid #e34646;
+  background-color: #e34646;
+  color: white;
+}

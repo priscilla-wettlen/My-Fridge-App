@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Card } from './Card';
+import Card  from './Card';
 import FoodItems from '../foodsAPI.json';
 import styles from './Shelf.module.css';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
