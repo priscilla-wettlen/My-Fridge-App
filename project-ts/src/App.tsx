@@ -1,17 +1,24 @@
 import React from 'react';
 import './App.css';
-import User from './User';
-import Friend from './Friend';
+import Header from './components/Header/Header';
+import Friend from './Pages/Friend';
+import User from './Pages/User';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 
 
 
 function App() {
   return (
-    <div className='App'>
-    <User />
-    <Friend />
-    </div>
+    
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<User />} />
+          <Route path="/friends" element={<Friend />} />
+      </Routes>
+    </Router>
   )
 }
 

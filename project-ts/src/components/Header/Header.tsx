@@ -1,4 +1,5 @@
-import './Header.modules.css'; 
+import { Link } from 'react-router-dom';
+import styles from './Header.module.css';
 
 const Header = () => {
   const logo = "my fridge";
@@ -6,16 +7,21 @@ const Header = () => {
   const yourFriends = "Your Friends"
   const about = "About My Fridge"
   const logout = "Logout"
+
+  const linkStyle = {
+  textDecoration: "none",
+  
+};
   return (
     <header>
-      <h1 className='logo'>{logo}</h1>
+      <h1 className={styles.logo}>{logo}</h1>
       <nav>
-        <ul className="ul">
-          <li className="li">{yourFridge}</li>
-          <li className="li">{yourFriends}</li>
-          <li className="li">{about}</li>
-          <li className="li">{logout}</li>
-        </ul>
+        <ul className={styles.ul}>
+          <Link to="/" style={linkStyle}><li className={styles.li}>{yourFridge} </li></Link>
+          <Link to="/friends" style={linkStyle}><li className={styles.li}>{yourFriends}</li></Link>
+          <li className={styles.li}>{about}</li>
+          <li className={styles.li}>{logout}</li>
+            </ul>
       </nav>
       </header>
     

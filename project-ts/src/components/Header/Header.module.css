@@ -4,6 +4,7 @@ header{
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+   text-decoration: none;
 }
 
 header, .logo, nav, ul, li {
@@ -22,10 +23,19 @@ header, .logo, nav, ul, li {
 .ul{
   display: flex;
   list-style: none;
+   text-decoration: none;
 }
 
 .li{
   font-family: 'Roboto', sans-serif;
   padding-right: 20px;
   color: #244020;
+  text-decoration: none;
+}
+.li:hover{
+  text-decoration: underline;
+}
+
+Link{
+   text-decoration: none;
 }
