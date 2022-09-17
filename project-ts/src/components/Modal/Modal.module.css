@@ -109,3 +109,13 @@
   cursor: pointer;
   
 }
+
+.setMessage{
+  font-family: 'Roboto', sans-serif;
+  color: #F25050;
+  background-color: white;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 100%;
+  margin-top: 1rem;
+}

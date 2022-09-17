@@ -1,11 +1,11 @@
 import FriendBio from '../components/Bio/FriendBio';
-import Shelf from '../components/Shelves/Shelf';
+import FriendShelf from '../components/FriendShelves/FriendShelf';
 
 function Friend() {
   return (
     <div className="App">
       <FriendBio />
-      <Shelf />
+      <FriendShelf />
      </div>
   );
 }

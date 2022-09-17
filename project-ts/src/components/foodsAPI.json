@@ -34,6 +34,49 @@
       "amount": 2,
       "description": "Juicy",
       "url": "img/oranges.jpg"
+    },
+    {
+      "id": 6,
+      "item": "Broccoli",
+      "amount": 1,
+      "description": "Good",
+      "url": "img/broccoli.avif"
+    },
+    {
+      "id": 7,
+      "item": "Red bell pepper",
+      "amount": 2,
+      "description": "Nice",
+      "url": "img/rodapaprika.avif"
+    },
+    {
+      "id": 8,
+      "item": "Grapes",
+      "amount": 1,
+      "description": "Delicious",
+      "url": "img/grapes.avif"
+    },
+    {
+      "id": 9,
+      "item": "Cantaloupe",
+      "amount": 1,
+      "description": "Juicy",
+      "url": "img/melon.avif"
+    },
+    {
+      "id": 10,
+      "item": "Blueberries",
+      "amount": 1,
+      "description": "Still good",
+      "url": "img/blueberries.avif"
+    }
+    ,
+    {
+      "id": 11,
+      "item": "Aubergine",
+      "amount": 2,
+      "description": "Soft",
+      "url": "img/aubergine.avif"
     }
 ],
 "DairyProducts":[{
