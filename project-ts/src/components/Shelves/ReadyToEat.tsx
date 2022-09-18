@@ -7,7 +7,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const ReadyToEat = () => {
   const [currCard, setCurrCard] = useState(FoodItems[0].ReadyToEat.map(food =>
-    <Card url={food.url} item={food.item} amount={`${food.amount} pieces`} description={food.description} />
+    <Card key={food.id} url={food.url} item={food.item} amount={`${food.amount} pieces`} description={food.description} />
   ).slice(0,4)
   );
   const HandleClickRight = () => {

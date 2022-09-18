@@ -9,7 +9,7 @@ const FruitsAndVegs = () => {
   
   const [currCard, setCurrCard] = useState(
           FoodItems[0].FruitsAndVegs.map(food => 
-              <Card url={food.url} item={food.item} amount={`${food.amount} pieces`} description={food.description} /> 
+              <Card key={food.id} url={food.url} item={food.item} amount={`${food.amount} pieces`} description={food.description} /> 
     ).slice(0, 4)
   );
   const HandleClickRight = () => {

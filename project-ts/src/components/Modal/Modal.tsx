@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import CloseIcon from '@mui/icons-material/Close';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronRight} from '@fortawesome/free-solid-svg-icons'
 import styles from './Modal.module.css';
 
 type ModalProps = {

@@ -1,0 +1,28 @@
+.footerContainer{
+  background-color: white;
+  display: flex;
+  padding: 1rem;
+  margin-top: 3rem;
+  height: 15vh;
+}
+
+.logo{
+  font-family:  'Comfortaa', cursive;
+  color: #244020;
+  font-size: 2rem;
+  letter-spacing: -2px;
+}
+
+.icons{
+  font-family: 'Roboto', sans-serif;
+  color: #244020;
+  font-size: 1rem;
+  
+}
+
+.copyright{
+  font-family: 'Roboto', sans-serif;
+  color: #244020;
+  font-size: 1rem;
+  
+}
