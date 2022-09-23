@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronRight} from '@fortawesome/free-solid-svg-icons'
+import { faXmark} from '@fortawesome/free-solid-svg-icons'
 import styles from './Modal.module.css';
 
 type ModalProps = {
@@ -19,7 +19,7 @@ const Modal = (props: ModalProps) => {
   return (
       <div className={styles.modalBg}>
         <div className={styles.modalContainer}>
-          <div className={styles.CloseIcon}><CloseIcon style={{cursor:"pointer"}} onClick={() => {props.closeModal(false)}} /></div>
+          <div className={styles.CloseIcon}><FontAwesomeIcon icon={faXmark} style={{cursor:"pointer"}} onClick={() => {props.closeModal(false)}} /></div>
           <div className={styles.modalContent}>
             <img src={props.url} width={400} alt="" />
             <div className={styles.modalProps}>
