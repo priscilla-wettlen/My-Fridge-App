@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Friends.module.css';
 
 type FriendsProps = {
@@ -68,7 +69,7 @@ const Friends = () => {
       {data.map((friend) => (
         <div className={styles.friendsCard}>
           <img className={styles.friendsImg} src={friend.img} alt="" />
-          <Friend key={friend.id} name={friend.name} age={`${friend.age} yeard old`} location={friend.location} diet={friend.diet} />
+          <Link to="/friends/friend"><Friend key={friend.id} name={friend.name} age={`${friend.age} yeard old`} location={friend.location} diet={friend.diet} /></Link>
         </div>
       )).slice(1,4)}
       </div>

@@ -1,6 +1,7 @@
 import styles from './Bio.module.css'; 
 import userList from '../userList.json';
 
+
 type BioProps = {
     name: string,
   location?: string,
@@ -22,11 +23,11 @@ const Profile = (props: BioProps) => {
   );
 };
 
-const Bio = () => {
+const FriendBio = () => {
   return ( 
     <div className={styles.userBio}>
       <div className={styles.userImage}>
-        <img className={styles.pf} src={userList[1].url} alt="" />
+        <img className={styles.pf} src={`/${userList[1].url}`} alt="" />
       </div>
       <br />
       <br />
@@ -38,4 +39,4 @@ const Bio = () => {
    );
 }
  
-export default Bio;
+export default FriendBio;

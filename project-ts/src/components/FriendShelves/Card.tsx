@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Modal from '../Modal/Modal';
 import styles from './FriendShelf.module.css';
 
+
 type CardProps = {
   id?: number,
   item: string,

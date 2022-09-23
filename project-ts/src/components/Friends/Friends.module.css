@@ -14,10 +14,13 @@
 
 .friendsCard{
   margin: 2%;
+  padding: 2%;
   font-family: 'Roboto', sans-serif;
   color: #244020;
   font-size: 1rem;
   text-align: center;
+  width: 20%;
+  height: 50%;
 }
 
 .Msg{
@@ -29,4 +32,8 @@
 .friendsImg{
   border-radius: 50%;
   margin-bottom: 3%;
+}
+.friendsImg:hover{
+  filter:grayscale(25%);
+  transition-duration: 0.7s;
 }
