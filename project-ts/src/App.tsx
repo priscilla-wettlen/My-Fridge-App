@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer'
-import Friend from './Pages/Friend';
+import FriendList from './Pages/FriendList';
 import User from './Pages/User';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -17,7 +17,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<User />} />
-          <Route path="/friends" element={<Friend />} />
+          <Route path="/friends" element={<FriendList />} />
       </Routes>
       <Footer />
     </Router>

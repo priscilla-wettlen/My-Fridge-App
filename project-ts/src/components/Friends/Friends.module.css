@@ -1,0 +1,32 @@
+.FriendListTitle{
+  margin: 2%;
+  font-family: 'Roboto', sans-serif;
+  color: #244020;
+}
+
+.friendsContainer{
+  height: 100vh;
+  padding: 2%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.friendsCard{
+  margin: 2%;
+  font-family: 'Roboto', sans-serif;
+  color: #244020;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.Msg{
+  font-family: 'Roboto', sans-serif;
+  color: #244020;
+  font-size: 1rem;
+}
+
+.friendsImg{
+  border-radius: 50%;
+  margin-bottom: 3%;
+}

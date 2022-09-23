@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-// import styles from './Friends.module.css';
+import styles from './Friends.module.css';
 
 type FriendsProps = {
   id?: number,
@@ -13,7 +13,7 @@ type FriendsProps = {
 const Friend = (props: FriendsProps) => {
   return (
     <div>
-      <h2>{props.name}</h2>
+      <h3>{props.name}</h3>
       <p>{props.age}</p>
       <p>{props.location}</p>
       <p>{props.diet}</p>
@@ -49,7 +49,7 @@ const Friends = () => {
   if (loading) {
     return (
       <div className="App">
-        <p>Loading...</p>
+        <p className={styles.Msg}>Loading friends...</p>
       </div>
     );
   }
@@ -57,18 +57,21 @@ const Friends = () => {
   if (error) {
     return (
       <div className="App">
-        <p>Error fetching friends</p>
+        <p className={styles.Msg}>There seems to be a problem with the server. Try again later.</p>
       </div>
     );
   }
   return ( 
-    <div>
+    <div className={styles.FriendList}>
+      <h2 className={styles.FriendListTitle}>Search your friend's fridges!</h2>
+    <div className={styles.friendsContainer}>
       {data.map((friend) => (
-        <div>
-          <img src={friend.img} alt="" />
-          <Friend key={friend.id} name={friend.name} age={friend.age} location={friend.location} diet={friend.diet} />
+        <div className={styles.friendsCard}>
+          <img className={styles.friendsImg} src={friend.img} alt="" />
+          <Friend key={friend.id} name={friend.name} age={`${friend.age} yeard old`} location={friend.location} diet={friend.diet} />
         </div>
       )).slice(1,4)}
+      </div>
     </div>
    );
 }
