@@ -14,14 +14,20 @@ const ReadyToEat = () => {
     }).slice(0,4)
   );
   const HandleClickRight = () => {
-    setCurrCard(FoodItems[0].ReadyToEat.map(food => 
-              <Card url={food.url} item={food.item} amount={`${food.amount} pieces`} description={food.description} /> 
-          ).slice(2,6))
+    setCurrCard(FoodItems[0].ReadyToEat.map(food => {
+      return food.amount <= 1 ?
+        <Card url={food.url} item={food.item} amount={`${food.amount} piece`} description={food.description} /> 
+        :
+        <Card url={food.url} item={food.item} amount={`${food.amount} pieces`} description={food.description} /> 
+      }).slice(2,6))
   }
   const HandleClickLeft = () => {
-    setCurrCard(FoodItems[0].ReadyToEat.map(food => 
-              <Card url={food.url} item={food.item} amount={`${food.amount} pieces`} description={food.description} /> 
-          ).slice(0,4))
+    setCurrCard(FoodItems[0].ReadyToEat.map(food => {
+      return food.amount <= 1 ?
+        <Card url={food.url} item={food.item} amount={`${food.amount} piece`} description={food.description} />
+        :
+        <Card url={food.url} item={food.item} amount={`${food.amount} pieces`} description={food.description} />
+      }).slice(0,4))
   }
   return (
     <section className={styles.shelf}>
