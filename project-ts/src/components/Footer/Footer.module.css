@@ -1,28 +1,59 @@
+footer{
+  background-color: white;
+}
+
 .footerContainer{
   background-color: white;
   display: flex;
+  align-items: center;
+  flex-direction: column;
   padding: 1rem;
   margin-top: 3rem;
-  height: 15vh;
+}
+
+.footerContainerInfo{
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  font-family: 'Roboto', sans-serif;
+  color: #244020;
+  margin: 20px 20px 0px 20px;
+  padding-bottom: 30px;
 }
 
 .logo{
   font-family:  'Comfortaa', cursive;
   color: #244020;
-  font-size: 2rem;
+  font-size: 2.5rem;
   letter-spacing: -2px;
+  margin: 10px;
+}
+
+.socialIcons{
+  display: flex;
+  justify-content: space-between;
 }
 
 .icons{
   font-family: 'Roboto', sans-serif;
   color: #244020;
-  font-size: 1rem;
-  
+  font-size: 1.5rem;
+  margin: 20px 10px 10px 10px;
+  cursor: pointer;
+}
+.icons:hover{
+  color: #F25050;
+  transition-duration: 0.3s;
 }
 
-.copyright{
-  font-family: 'Roboto', sans-serif;
-  color: #244020;
-  font-size: 1rem;
-  
+.footerContainerPara{
+  padding-bottom: 10px;
 }
+
+.footerContainerPara:hover{
+  color: #F25050;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+

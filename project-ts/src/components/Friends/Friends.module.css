@@ -39,5 +39,7 @@ text-decoration: none;
 color: #244020;
 }
 .link:hover{
-  text-decoration: underline;
+  color: #F25050;
+  transition-duration: 0.3s;
+  cursor: pointer;
 }

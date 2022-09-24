@@ -31,9 +31,11 @@ header, .logo, nav, ul, li {
   padding-right: 20px;
   color: #244020;
   text-decoration: none;
+  cursor: pointer;
 }
 .li:hover{
-  text-decoration: underline;
+  color: #F25050;
+  transition-duration: 0.3s;
 }
 
 Link{

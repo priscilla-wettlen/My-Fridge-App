@@ -9,9 +9,9 @@ const Header = () => {
   const logout = "Logout"
 
   const linkStyle = {
-  textDecoration: "none",
+    textDecoration: "none"
+  };
   
-};
   return (
     <header>
       <Link to="/" style={linkStyle}><h1 className={styles.logo}>{logo}</h1></Link>
