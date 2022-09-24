@@ -5,8 +5,7 @@ import styles from './Friends.module.css';
 type FriendsProps = {
   id?: number,
   name: string,
-  age: string,
-  location: string,
+  location?: string,
   diet: string,
   img?: string
 }
@@ -15,8 +14,6 @@ const Friend = (props: FriendsProps) => {
   return (
     <div>
       <h3>{props.name}</h3>
-      <p>{props.age}</p>
-      <p>{props.location}</p>
       <p>{props.diet}</p>
     </div>
   )
@@ -68,10 +65,10 @@ const Friends = () => {
     <div className={styles.friendsContainer}>
       {data.map((friend) => (
         <div className={styles.friendsCard}>
-          <img className={styles.friendsImg} src={friend.img} alt="" />
-          <Link to="/friends/friend"><Friend key={friend.id} name={friend.name} age={`${friend.age} yeard old`} location={friend.location} diet={friend.diet} /></Link>
+          <Link to="/friends/friend" className={styles.link}><img key={friend.id} className={styles.friendsImg} src={friend.img} alt="" />
+          <Friend key={friend.id} name={friend.name} diet={friend.diet} /></Link>
         </div>
-      )).slice(1,4)}
+      )).slice(1)}
       </div>
     </div>
    );

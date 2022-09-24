@@ -19,7 +19,7 @@ const Card = (props: CardProps) => {
         <h3 className={styles.item}>{props.item}</h3>
         <p className={styles.amnt}>{props.amount}</p>
         <p className={styles.desc}>{props.description}</p>
-        <button className={styles.requestItem} onClick={() => setOpenModal(true)}>Request Item</button>
+        <button className={styles.requestItem} onClick={() => setOpenModal(true)}>Remove Item</button>
     {openModal && <Modal closeModal={setOpenModal} item="item" amount="amount" description="description" />}
     </div>
   )

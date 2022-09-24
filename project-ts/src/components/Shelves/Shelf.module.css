@@ -64,8 +64,8 @@ img {
 }
 
 .requestItem{ 
-  background-color: white;
-  color: #F25050;
+  background-color: #F25050;
+  color: white;
   margin-top: 20px;
   padding: 10px;
   border: 1px solid #F25050;
@@ -78,6 +78,6 @@ img {
 }
 
 .requestItem:hover{
-  background-color: #F25050;
+  background-color: #e34646;
   color: white;
 }

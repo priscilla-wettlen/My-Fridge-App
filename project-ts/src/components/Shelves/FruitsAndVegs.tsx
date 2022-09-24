@@ -8,8 +8,12 @@ import styles from './Shelf.module.css';
 const FruitsAndVegs = () => {
   
   const [currCard, setCurrCard] = useState(
-          FoodItems[0].FruitsAndVegs.map(food => 
-              <Card key={food.id} url={food.url} item={food.item} amount={`${food.amount} pieces`} description={food.description} /> 
+    FoodItems[0].FruitsAndVegs.map(food => 
+      {return food.amount <= 1 ?
+      <Card key={food.id} url={food.url} item={food.item} amount={`${food.amount} piece`} description={food.description} /> 
+      :
+      <Card key={food.id} url={food.url} item={food.item} amount={`${food.amount} pieces`} description={food.description} />
+    }
     ).slice(0, 4)
   );
   const HandleClickRight = () => {

@@ -14,7 +14,7 @@ const Header = () => {
 };
   return (
     <header>
-      <h1 className={styles.logo}>{logo}</h1>
+      <Link to="/" style={linkStyle}><h1 className={styles.logo}>{logo}</h1></Link>
       <nav>
         <ul className={styles.ul}>
           <Link to="/" style={linkStyle}><li className={styles.li}>{yourFridge} </li></Link>

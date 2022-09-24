@@ -8,21 +8,29 @@ import styles from './FriendShelf.module.css';
 
 
 const FruitsAndVegs = () => {
-  
   const [currCard, setCurrCard] = useState(
-          FoodItems[0].FruitsAndVegs.map(food => 
-              <Card key={food.id} url={`/${food.url}`} item={food.item} amount={`${food.amount} pieces`} description={food.description} /> 
-    ).slice(5, 9)
+    FoodItems[0].FruitsAndVegs.map(food =>
+          {return food.amount <= 1 ?
+      <Card key={food.id} url={`/${food.url}`} item={food.item} amount={`${food.amount} piece`} description={food.description} /> 
+      :
+      <Card key={food.id} url={`/${food.url}`} item={food.item} amount={`${food.amount} pieces`} description={food.description} /> 
+          }).slice(5, 9)
   );
   const HandleClickRight = () => {
-    setCurrCard(FoodItems[0].FruitsAndVegs.map(food => 
-              <Card key={food.id} url={`/${food.url}`} item={food.item} amount={`${food.amount} pieces`} description={food.description} /> 
-          ).slice(7,11))
+    setCurrCard(FoodItems[0].FruitsAndVegs.map(food => {
+      return food.amount <= 1 ?
+        <Card key={food.id} url={`/${food.url}`} item={food.item} amount={`${food.amount} piece`} description={food.description} /> 
+        :
+        <Card key={food.id} url={`/${food.url}`} item={food.item} amount={`${food.amount} pieces`} description={food.description} /> 
+      }).slice(7,11))
   }
   const HandleClickLeft = () => {
-    setCurrCard(FoodItems[0].FruitsAndVegs.map(food => 
-              <Card key={food.id} url={`/${food.url}`} item={food.item} amount={`${food.amount} pieces`} description={food.description} /> 
-          ).slice(5,9))
+    setCurrCard(FoodItems[0].FruitsAndVegs.map(food => {
+      return food.amount <= 1 ?
+        <Card key={food.id} url={`/${food.url}`} item={food.item} amount={`${food.amount} piece`} description={food.description} /> 
+        :
+        <Card key={food.id} url={`/${food.url}`} item={food.item} amount={`${food.amount} pieces`} description={food.description} /> 
+      }).slice(5,9))
   }
   return (
     <section className={styles.shelf}>

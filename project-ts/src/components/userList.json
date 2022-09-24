@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Britney S",
+    "name": "Britney Spears",
     "location": {
       "city": "Hollywood, CA",
       "km": 1.5
@@ -12,7 +12,7 @@
   },
   {
     "id": 2,
-    "name": "Madonna C",
+    "name": "Madonna Ciccone",
     "location": {
       "city": "Hollywood, CA",
       "km": 2
