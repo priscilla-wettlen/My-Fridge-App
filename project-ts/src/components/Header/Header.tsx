@@ -8,17 +8,18 @@ const Header = () => {
   const about = "About My Fridge"
   const logout = "Logout"
 
-  const linkStyle = {
-    textDecoration: "none"
-  };
-  
+
   return (
     <header>
-      <Link to="/" style={linkStyle}><h1 className={styles.logo}>{logo}</h1></Link>
+      <Link to="/" className={styles.linkStyle}><h1 className={styles.logo}>{logo}</h1></Link>
       <nav>
         <ul className={styles.ul}>
-          <Link to="/" style={linkStyle}><li className={styles.li}>{yourFridge} </li></Link>
-          <Link to="/friends" style={linkStyle}><li className={styles.li}>{yourFriends}</li></Link>
+          <li className={styles.li}>
+            <Link to="/" className={styles.linkStyle}>{yourFridge}</Link>
+          </li>
+          <li className={styles.li}>
+            <Link to="/friends" className={styles.linkStyle}>{yourFriends}</Link>
+          </li>
           <li className={styles.li}>{about}</li>
           <li className={styles.li}>{logout}</li>
             </ul>

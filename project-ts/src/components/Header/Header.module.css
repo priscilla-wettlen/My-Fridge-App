@@ -38,6 +38,12 @@ header, .logo, nav, ul, li {
   transition-duration: 0.3s;
 }
 
-Link{
+.linkStyle{
+  color: #244020;
    text-decoration: none;
 }
+.linkStyle:hover{
+  color: #F25050;
+  transition-duration: 0.3s;
+}
+

@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=Roboto:wght@300;400;500;700&display=swap');
+*{
+  box-sizing: border-box;
+}
+.Cover{
+  background-color: #C4F2CB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2%;
+  height: 50vh;
+  max-width: 100%;
+}
+
+.Cover__info{
+  font-family: 'Roboto', sans-serif;
+  font-size: 3rem;
+  font-weight: 300;
+  color: #244020;
+  width: 50%;
+  margin-right: 5%;
+}
+
+.Cover__form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#Cover__form__login{
+  width: 200%;
+  padding: 10%;
+  margin-bottom: 4%;
+  border: 0;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+#Cover__form__btn{
+  background-color: #F25050;
+  color: white;
+  padding: 10px;
+  border: 1px solid #F25050;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#Cover__form__btn:hover{
+  border: 1px solid #e34646;
+  background-color: #e34646;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+.About{
+  background-color: #C4F2CB;
+}
+
+.HowTo{
+  background-color: #C4F2CB;
+}

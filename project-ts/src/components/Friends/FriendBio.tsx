@@ -1,4 +1,4 @@
-import styles from './Bio.module.css'; 
+import styles from '../Bio/Bio.module.css'; 
 import userList from '../userList.json';
 
 

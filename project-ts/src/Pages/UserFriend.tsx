@@ -1,5 +1,5 @@
-import FriendBio from '../components/Bio/FriendBio';
-import FriendShelf from '../components/FriendShelves/FriendShelf';
+import FriendBio from '../components/Friends/FriendBio';
+import FriendShelf from '../components/Friends/FriendShelves/FriendShelf';
 
 
 const UserFriend = () => {

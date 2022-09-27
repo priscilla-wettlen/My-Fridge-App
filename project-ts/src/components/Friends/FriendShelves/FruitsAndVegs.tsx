@@ -3,7 +3,7 @@ import Card from './Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { faChevronLeft} from '@fortawesome/free-solid-svg-icons'
-import FoodItems from '../foodsAPI.json';
+import FoodItems from '../../foodsAPI.json';
 import styles from './FriendShelf.module.css';
 
 
