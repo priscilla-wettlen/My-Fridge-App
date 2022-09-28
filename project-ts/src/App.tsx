@@ -5,6 +5,7 @@ import Footer from './components/Footer/Footer'
 import Home from './components/Home/Home'
 import FriendList from './Pages/FriendList';
 import UserFriend from './Pages/UserFriend';
+import Login from './components/Home/Login';
 //import User from './Pages/User';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/friends" element={<FriendList />} />
         <Route path="friends/:friend" element={<UserFriend />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </Router>
