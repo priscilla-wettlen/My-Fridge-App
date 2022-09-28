@@ -27,8 +27,7 @@ const Home = () => {
         <div className={styles.Cover__info}>
           <h4>Tired of that meal?</h4>
           <h4>Don't throw it out!</h4>
-          <p className={styles.p__foodhero}>Just put it on your Fridge and let someone else rescue it.</p>
-          <p className={styles.p__signup}>Ready to be a food hero? Sign up for My Fridge today. It's free!</p>
+          <p className={styles.p__foodhero}>Sign up for My Fridge today to become a food hero. It's free!</p>
         </div>
         <div className={styles.Cover__form}>
         {login}
@@ -37,10 +36,10 @@ const Home = () => {
         </div>
       </section>
       <section className={styles.About}>
-        hello
-      </section>
-      <section className={styles.HowTo}>
-        hello
+        <h4>How it works</h4>
+        <div className={styles.About__div}>1. This</div>
+        <div className={styles.About__div}>2. That</div>
+        <div className={styles.About__div}>3. This again</div>
       </section>
     </div>
    );

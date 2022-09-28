@@ -4,7 +4,10 @@ header{
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-   text-decoration: none;
+  text-decoration: none;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 header, .logo, nav, ul, li {
@@ -22,8 +25,10 @@ header, .logo, nav, ul, li {
 
 .ul{
   display: flex;
+  align-items: center;
   list-style: none;
-   text-decoration: none;
+  text-decoration: none;
+  margin-top: 2%;
 }
 
 .li{
