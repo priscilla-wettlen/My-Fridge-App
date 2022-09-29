@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import Card  from './Card';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { faChevronLeft} from '@fortawesome/free-solid-svg-icons'
 import FoodItems from '../foodsAPI.json';
 import styles from './Shelf.module.css';
 
@@ -30,10 +31,10 @@ const FruitsAndVegs = () => {
     <section className={styles.shelf}>
       <h3 className={styles.sectionTitle}>Fruits and Veggies</h3>
       <div className={styles.container}>
-        <ArrowBackIosIcon className={styles.arrowBack} onClick={HandleClickLeft} />
+        <FontAwesomeIcon icon={faChevronLeft} className={styles.arrowBack} onClick={HandleClickLeft} />
         {currCard}
         
-        <ArrowForwardIosIcon className={styles.arrowForward} onClick={HandleClickRight} />
+        <FontAwesomeIcon icon={faChevronRight} className={styles.arrowForward} onClick={HandleClickRight} />
       </div>
     </section>
   )

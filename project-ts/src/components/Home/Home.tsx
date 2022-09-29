@@ -36,10 +36,11 @@ const Home = () => {
         </div>
       </section>
       <section className={styles.About}>
-        <h4>How it works</h4>
-        <div className={styles.About__div}>1. This</div>
-        <div className={styles.About__div}>2. That</div>
-        <div className={styles.About__div}>3. This again</div>
+        <h4 className={styles.About__title}>How it works</h4>
+        <div className={styles.About__div}>1. Browse your friends' Fridges</div>
+        <div className={styles.About__div}>2. Found something you liked? Request it!</div>
+        <div className={styles.About__div}>3. Meet your friend to pick up your item (And maybe catch up?)</div>
+        <div className={styles.About__div}>4. Cook and enjoy!</div>
       </section>
     </div>
    );

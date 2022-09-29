@@ -2,8 +2,9 @@ import { useState } from 'react';
 import Card  from './Card';
 import FoodItems from '../foodsAPI.json';
 import styles from './Shelf.module.css';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { faChevronLeft} from '@fortawesome/free-solid-svg-icons'
 
 const DairyProducts = () => {
   const [currCard, setCurrCard] = useState(FoodItems[0].DairyProducts.map(food => {
@@ -27,9 +28,9 @@ const DairyProducts = () => {
     <section className={styles.shelf}>
       <h3 className={styles.sectionTitle}>Dairy Products</h3>
         <div className={styles.container}>
-        <ArrowBackIosIcon className={styles.arrowBack} onClick={HandleClickLeft} />
+        <FontAwesomeIcon icon={faChevronLeft} onClick={HandleClickLeft} />
         {currCard}
-        <ArrowForwardIosIcon className={styles.arrowForward} onClick={HandleClickRight} />
+        <FontAwesomeIcon icon={faChevronRight} onClick={HandleClickRight} />
       </div>
 
     </section>
