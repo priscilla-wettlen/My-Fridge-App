@@ -18,6 +18,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/fridge" element={<User />} />
         <Route path="/friends" element={<FriendList />} />
         <Route path="friends/:friend" element={<UserFriend />} />
