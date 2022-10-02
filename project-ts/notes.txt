@@ -52,3 +52,38 @@ const Card = () => {
 export default Card;
 
 https://my-json-server.typicode.com/priscilla-silva/FoodsAPI/users
+
+
+const [details, setDetails] = useState({ name:"", email:"", password:""})
+  const [error, setError] = useState("")
+
+
+  const userDetails = {
+    name: "Britney Spears",
+    email: "britney@gmail.com",
+    password: "1234"
+  }
+
+  const navigate = useNavigate();
+  const userLogin = (details: { name: string; email: string; password: string }) => {
+    console.log(details)
+
+    if (details.email === userDetails.email && details.password === userDetails.password) {
+      navigate("/fridge")
+    } else {
+      alert('Incorrect email and/or password')
+    }
+  }
+
+  onChange={_event => setDetails({...details, email: _event.target.value})} value={details.email}
+
+  
+  const submitHandler = (event: { preventDefault: () => void }) => {
+    event.preventDefault();
+
+    userLogin(details);
+  }
+
+  const userLogout = (details: any) => {
+    console.log("Logout")
+  }

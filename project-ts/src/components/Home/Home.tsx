@@ -1,11 +1,31 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Login from './Login';
+import { createUserWithEmailAndPassword } from 'firebase/auth'
+import {auth} from '../firebase-config'
+//import Login from './Login';
 import styles from './Home.module.css'
 
 
 
 const Home = () => {
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
+  const [registerEmail, setRegisterEmail] = useState("")
+  const [registerPassword, setRegisterPassword] = useState("")
   
+
+  const register = async () => {
+    try {
+      return await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
+    }
+    catch (err) {
+      console.log(err.message)
+    }
+    finally {
+      console.log("user created")
+    }
+   }
+
   return ( 
     <div>
       <section className={styles.Cover}>
@@ -15,11 +35,11 @@ const Home = () => {
           <p className={styles.p__foodhero}>Sign up for My Fridge today to become a food hero. It's free!</p>
         </div>
         <div className={styles.Cover__form}>
-          <form className={styles.Cover__form}>
-            <input type="text" name="firstname" className={styles.Cover__form__login} placeholder="First name" />
-            <input type="text" name="lastname" className={styles.Cover__form__login} placeholder="Last name" />
-            <input type="email" name="email" className={styles.Cover__form__login} placeholder="E-mail address"  />
-            <input type="password" name="password" className={styles.Cover__form__login} placeholder="Password" />
+          <form className={styles.Cover__form} onSubmit={register}>
+            <input type="text" name="firstname" className={styles.Cover__form__login} placeholder="First name" onChange={(event)=> setFirstName(event.target.value)} />
+            <input type="text" name="lastname" className={styles.Cover__form__login} placeholder="Last name" onChange={(event)=> setLastName(event.target.value)} />
+            <input type="email" name="email" className={styles.Cover__form__login} placeholder="E-mail address" onChange={(event)=> setRegisterEmail(event.target.value)} />
+            <input type="password" name="password" className={styles.Cover__form__login} placeholder="Password" onChange={(event)=> setRegisterPassword(event.target.value)} />
             <input type="submit" value="SIGNUP" id={styles.Cover__form__btn} />
           </form>
           <br />

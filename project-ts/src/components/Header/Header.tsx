@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './Header.module.css';
 
 const Header = () => {
@@ -6,7 +6,11 @@ const Header = () => {
   const home = "Home"
   const yourFridge = "Your Fridge"
   const yourFriends = "Your Friends"
-  const logout = "Logout"
+  
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    navigate('/login')
+  }
 
 
   return (
@@ -23,7 +27,7 @@ const Header = () => {
           <li className={styles.li}>
             <Link to="/friends" className={styles.linkStyle}>{yourFriends}</Link>
           </li>
-          <li className={styles.li}>{logout}</li>
+          <button className={styles.logout} onClick={handleLogout}>Logout</button>
             </ul>
       </nav>
       </header>

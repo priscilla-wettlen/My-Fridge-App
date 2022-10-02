@@ -52,3 +52,20 @@ header, .logo, nav, ul, li {
   transition-duration: 0.3s;
 }
 
+.logout{ 
+  background-color: #F25050;
+  color: white;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid #F25050;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  
+}
+
+.logout:hover{
+  background-color: #e34646;
+  color: white;
+}
