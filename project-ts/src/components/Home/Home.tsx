@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { createUserWithEmailAndPassword } from 'firebase/auth'
-import {auth} from '../firebase-config'
 //import Login from './Login';
 import styles from './Home.module.css'
 
@@ -14,17 +12,48 @@ const Home = () => {
   const [registerPassword, setRegisterPassword] = useState("")
   
 
-  const register = async () => {
+  // const register = async () => {
+  //   try {
+  //     return await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
+  //   }
+  //   catch (err) {
+  //     console.log(err.message)
+  //   }
+  //   finally {
+  //     console.log("user created")
+  //   }
+  //  }
+
+  const register = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
     try {
-      return await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
+      let res = await fetch("http://localhost:8000/users", {
+        method: "POST",
+        body: JSON.stringify({
+          first_name: firstName,
+          last_name: lastName,
+          email: registerEmail,
+          password: registerPassword,
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+         },
+      });
+      //let resJson = await res.json();
+      if (res.status === 200) {
+        setFirstName("");
+        setLastName("");
+        setRegisterEmail("");
+        setRegisterPassword("");
+        alert("User created successfully");
+      } else {
+        alert("Some error occured");
+      }
+    } catch (err) {
+      console.log(err);
     }
-    catch (err) {
-      console.log(err.message)
-    }
-    finally {
-      console.log("user created")
-    }
-   }
+  };
+    
 
   return ( 
     <div>
@@ -36,10 +65,10 @@ const Home = () => {
         </div>
         <div className={styles.Cover__form}>
           <form className={styles.Cover__form} onSubmit={register}>
-            <input type="text" name="firstname" className={styles.Cover__form__login} placeholder="First name" onChange={(event)=> setFirstName(event.target.value)} />
-            <input type="text" name="lastname" className={styles.Cover__form__login} placeholder="Last name" onChange={(event)=> setLastName(event.target.value)} />
-            <input type="email" name="email" className={styles.Cover__form__login} placeholder="E-mail address" onChange={(event)=> setRegisterEmail(event.target.value)} />
-            <input type="password" name="password" className={styles.Cover__form__login} placeholder="Password" onChange={(event)=> setRegisterPassword(event.target.value)} />
+            <input type="text" name="firstname" className={styles.Cover__form__login} placeholder="First name" onChange={(e)=> setFirstName(e.target.value)} />
+            <input type="text" name="lastname" className={styles.Cover__form__login} placeholder="Last name" onChange={(e)=> setLastName(e.target.value)} />
+            <input type="email" name="email" className={styles.Cover__form__login} placeholder="E-mail address" onChange={(e)=> setRegisterEmail(e.target.value)} />
+            <input type="password" name="password" className={styles.Cover__form__login} placeholder="Password" onChange={(e)=> setRegisterPassword(e.target.value)} />
             <input type="submit" value="SIGNUP" id={styles.Cover__form__btn} />
           </form>
           <br />
