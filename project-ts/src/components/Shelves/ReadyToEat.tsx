@@ -1,45 +1,67 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import  Card  from './Card';
-import FoodItems from '../foodsAPI.json';
-import styles from './Shelf.module.css';
+import ModalReady from '../Modal/ModalReady';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
-import { faChevronLeft} from '@fortawesome/free-solid-svg-icons'
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+//import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+//import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import styles from './Shelf.module.css';
 
 const ReadyToEat = () => {
-  const [currCard, setCurrCard] = useState(FoodItems[0].ReadyToEat.map(food => {
-    return food.amount <= 1 ?
-      <Card key={food.id} url={food.url} item={food.item} amount={`${food.amount} piece`} description={food.description} />
-      :
-      <Card key={food.id} url={food.url} item={food.item} amount={`${food.amount} pieces`} description={food.description} />
-    }).slice(0,4)
-  );
-  const HandleClickRight = () => {
-    setCurrCard(FoodItems[0].ReadyToEat.map(food => {
-      return food.amount <= 1 ?
-        <Card url={food.url} item={food.item} amount={`${food.amount} piece`} description={food.description} /> 
-        :
-        <Card url={food.url} item={food.item} amount={`${food.amount} pieces`} description={food.description} /> 
-      }).slice(2,6))
+  const [openModal, setOpenModal] = useState(false)
+  const [data, setData] = useState<Array<{
+    id?:number, itemName: string, itemAmount:string, itemDescription:string, image:string}>>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch(
+          "http://localhost:8000/ready-eat"
+        );
+        const foods = await response.json();
+        setData(foods);
+      } catch (e) {
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="App">
+        <p className={styles.Msg}>Loading friends...</p>
+      </div>
+    );
   }
-  const HandleClickLeft = () => {
-    setCurrCard(FoodItems[0].ReadyToEat.map(food => {
-      return food.amount <= 1 ?
-        <Card url={food.url} item={food.item} amount={`${food.amount} piece`} description={food.description} />
-        :
-        <Card url={food.url} item={food.item} amount={`${food.amount} pieces`} description={food.description} />
-      }).slice(0,4))
+
+  if (error) {
+    return (
+      <div className="App">
+        <p className={styles.Msg}>There seems to be a problem with the server. Try again later.</p>
+      </div>
+    );
   }
   return (
     <section className={styles.shelf}>
-      <h3 className={styles.sectionTitle}>Ready to Eat</h3>
-        <div className={styles.container}>
-        <FontAwesomeIcon icon={faChevronLeft} className={styles.arrowBack} onClick={HandleClickLeft} />
-        {currCard}
-        <FontAwesomeIcon icon={faChevronRight} className={styles.arrowForward} onClick={HandleClickRight} />
+      <h3 className={styles.sectionTitle}>Miscellaneous</h3>
+      <FontAwesomeIcon icon={faPlusCircle} className={styles.plusCircle} onClick={() => setOpenModal(true)} />
+      {openModal && <ModalReady closeModal={setOpenModal} itemName="item" itemAmount="amount" itemDescription="description" />}
+      <div className={styles.container}>
+        {Object.values(data).map((food) => (
+          <div className={styles.card} key={food.id}>
+            <img width={250} src={food.image} alt="" />
+            <Card id={food.id} item={food.itemName} amount={food.itemAmount} description={food.itemDescription} />
+          </div>
+        ))}
       </div>
-
-    </section>
+      </section>
   )
 }
 

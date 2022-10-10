@@ -1,9 +1,6 @@
-//import { useState } from 'react';
-//import Card from './Card';
 import FruitsAndVegs from './FruitsAndVegs';
 import DairyProducts from './DairyProducts';
 import ReadyToEat from './ReadyToEat';
-
 
 
 

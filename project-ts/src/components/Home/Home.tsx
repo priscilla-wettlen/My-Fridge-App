@@ -10,19 +10,6 @@ const Home = () => {
   const [lastName, setLastName] = useState("")
   const [registerEmail, setRegisterEmail] = useState("")
   const [registerPassword, setRegisterPassword] = useState("")
-  
-
-  // const register = async () => {
-  //   try {
-  //     return await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
-  //   }
-  //   catch (err) {
-  //     console.log(err.message)
-  //   }
-  //   finally {
-  //     console.log("user created")
-  //   }
-  //  }
 
   const register = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();

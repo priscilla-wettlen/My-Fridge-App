@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import Modal from '../Modal/Modal';
+import { useState, useEffect } from 'react';
+//import ModalUpload from '../Modal/ModalFV';
 import styles from './Shelf.module.css';
 
 type CardProps = {
@@ -7,21 +7,31 @@ type CardProps = {
   item: string,
   amount: string,
   description: string,
-  url?: string
+  imageURL?: string
+
 }
 
 const Card = (props: CardProps) => {
-  const [openModal, setOpenModal] = useState(false)
+  const handleDelete = async() => {
+    try {
+      await fetch('http://localhost:8000/fruit-veg/:id', {
+        method: 'DELETE'
+      })
+      window.location.reload()
+      console.log('deleted')
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
 
   return (
     <div className={styles.card}>
-        <img src={props.url} alt="" />
         <h3 className={styles.item}>{props.item}</h3>
         <p className={styles.amnt}>{props.amount}</p>
-        <p className={styles.desc}>{props.description}</p>
-        <button className={styles.requestItem} onClick={() => setOpenModal(false)}>Remove Item</button>
-    {openModal && <Modal closeModal={setOpenModal} item="item" amount="amount" description="description" />}
-    </div>
+      <p className={styles.desc}>{props.description}</p>
+      <button className={styles.requestItem} onClick={handleDelete}>Remove Item</button>
+      </div>
   )
 }
 
