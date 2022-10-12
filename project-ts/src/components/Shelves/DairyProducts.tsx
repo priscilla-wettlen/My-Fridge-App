@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Card  from './Card';
+import CardDairy  from '../Cards/CardDairy';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 //import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
@@ -10,7 +10,7 @@ import styles from './Shelf.module.css';
 const DairyProducts = () => {
   const [openModal, setOpenModal] = useState(false)
   const [data, setData] = useState<Array<{
-    id?:number, itemName: string, itemAmount:string, itemDescription:string, image:string}>>([]);
+    id:string, itemName: string, itemAmount:string, itemDescription:string, image:string}>>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -19,7 +19,7 @@ const DairyProducts = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          "http://localhost:8000/dairy"
+          'http://localhost:3000/dairy'
         );
         const foods = await response.json();
         setData(foods);
@@ -53,12 +53,12 @@ const DairyProducts = () => {
     <section className={styles.shelf}>
       <h3 className={styles.sectionTitle}>Dairy</h3>
       <FontAwesomeIcon icon={faPlusCircle} className={styles.plusCircle} onClick={() => setOpenModal(true)} />
-      {openModal && <ModalDairy closeModal={setOpenModal} itemName="item" itemAmount="amount" itemDescription="description" />}
+      {openModal && <ModalDairy closeModal={setOpenModal} id="id" itemName="item" itemAmount="amount" itemDescription="description" />}
       <div className={styles.container}>
-        {Object.values(data).map((food) => (
-          <div className={styles.card} key={food.id}>
+        {Object.values(data).map((food, index) => (
+          <div className={styles.card} key={index}>
             <img width={250} src={food.image} alt="" />
-            <Card id={food.id} item={food.itemName} amount={food.itemAmount} description={food.itemDescription} />
+            <CardDairy id={food.id} itemName={food.itemName} itemAmount={food.itemAmount} itemDescription={food.itemDescription} />
           </div>
         ))}
       </div>

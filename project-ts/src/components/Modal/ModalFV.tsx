@@ -6,7 +6,7 @@ import styles from './Modal.module.css';
 
 
 type ModalFVProps = {
-  id?:number,
+  id:string,
   itemName: string,
   itemAmount: string,
   itemDescription: string,
@@ -16,7 +16,6 @@ type ModalFVProps = {
 
 
 const ModalFV = (props: ModalFVProps) => {
-  const [id, setId] = useState(null)
   const [item, setItem] = useState("")
   const [amount, setAmount] = useState("")
   const [description, setDescription] = useState("")
@@ -27,8 +26,11 @@ const ModalFV = (props: ModalFVProps) => {
 
   const handleSubmit = async () => {
     try {
-      let res = await fetch("http://localhost:8000/fruit-veg", {
+       await fetch("http://localhost:3000/fruits-vegs", {
         method: "POST",
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+         },
         body: JSON.stringify({
           id: uuidv4(),
           itemName: item,
@@ -36,22 +38,19 @@ const ModalFV = (props: ModalFVProps) => {
           itemDescription: description,
           image: imageURL
         }),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-         },
       });
       //let resJson = await res.json();
       
-      if (res.status === 200) {
-        setId(id);
-        setItem("");
-        setAmount("");
-        setDescription("");
-        setImageURL("");
-        window.location.reload();
-      } else {
-        alert("An error occurred.");
-      }
+      // if (res.status === 200) {
+      //   setId(id);
+      //   setItem("");
+      //   setAmount("");
+      //   setDescription("");
+      //   setImageURL("");
+      //   window.location.reload();
+      // } else {
+      //   alert("An error occurred.");
+      // }
     } catch (err) {
       console.log(err);
     }
@@ -80,7 +79,6 @@ const ModalFV = (props: ModalFVProps) => {
 }
 
 export default ModalFV;
-
 
 
 

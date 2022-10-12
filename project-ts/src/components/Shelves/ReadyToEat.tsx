@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import  Card  from './Card';
+import  CardMisc  from '../Cards/CardMisc';
 import ModalReady from '../Modal/ModalReady';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
@@ -10,7 +10,7 @@ import styles from './Shelf.module.css';
 const ReadyToEat = () => {
   const [openModal, setOpenModal] = useState(false)
   const [data, setData] = useState<Array<{
-    id?:number, itemName: string, itemAmount:string, itemDescription:string, image:string}>>([]);
+    id:string, itemName: string, itemAmount:string, itemDescription:string, image:string}>>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -19,7 +19,7 @@ const ReadyToEat = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          "http://localhost:8000/ready-eat"
+          'http://localhost:3000/misc'
         );
         const foods = await response.json();
         setData(foods);
@@ -52,12 +52,12 @@ const ReadyToEat = () => {
     <section className={styles.shelf}>
       <h3 className={styles.sectionTitle}>Miscellaneous</h3>
       <FontAwesomeIcon icon={faPlusCircle} className={styles.plusCircle} onClick={() => setOpenModal(true)} />
-      {openModal && <ModalReady closeModal={setOpenModal} itemName="item" itemAmount="amount" itemDescription="description" />}
+      {openModal && <ModalReady closeModal={setOpenModal} id="id" itemName="item" itemAmount="amount" itemDescription="description" />}
       <div className={styles.container}>
-        {Object.values(data).map((food) => (
-          <div className={styles.card} key={food.id}>
+        {Object.values(data).map((food, index) => (
+          <div className={styles.card} key={index}>
             <img width={250} src={food.image} alt="" />
-            <Card id={food.id} item={food.itemName} amount={food.itemAmount} description={food.itemDescription} />
+            <CardMisc id={food.id} itemName={food.itemName} itemAmount={food.itemAmount} itemDescription={food.itemDescription} />
           </div>
         ))}
       </div>

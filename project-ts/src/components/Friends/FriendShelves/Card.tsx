@@ -4,7 +4,7 @@ import styles from './FriendShelf.module.css';
 
 
 type CardProps = {
-  id?: number,
+  id?: string,
   item: string,
   amount: string,
   description: string,

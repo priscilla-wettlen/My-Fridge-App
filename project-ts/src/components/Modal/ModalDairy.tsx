@@ -1,11 +1,12 @@
 import { useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import { v4 as uuidv4 } from 'uuid';
 import styles from './Modal.module.css';
 
 
 type ModalDairyProps = {
-  id?:number,
+  id:string,
   itemName: string,
   itemAmount: string,
   itemDescription: string,
@@ -15,7 +16,6 @@ type ModalDairyProps = {
 
 
 const ModalDairy = (props: ModalDairyProps) => {
-  const [id, setId] = useState(null)
   const [item, setItem] = useState("")
   const [amount, setAmount] = useState("")
   const [description, setDescription] = useState("")
@@ -23,10 +23,10 @@ const ModalDairy = (props: ModalDairyProps) => {
   
   const handleSubmit = async () => {
     try {
-      let res = await fetch("http://localhost:8000/dairy", {
+      await fetch("http://localhost:3000/dairy", {
         method: "POST",
         body: JSON.stringify({
-          id: Date.now(),
+          id: uuidv4(),
           itemName: item,
           itemAmount: amount,
           itemDescription: description,
@@ -35,17 +35,7 @@ const ModalDairy = (props: ModalDairyProps) => {
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
          },
-      });
-      //let resJson = await res.json();
-      if (res.status === 200) {
-        setId(id);
-        setItem("");
-        setAmount("");
-        setDescription("");
-        setImageURL("");
-      } else {
-        alert("An error occurred.");
-      }
+      });  
     } catch (err) {
       console.log(err);
     }
