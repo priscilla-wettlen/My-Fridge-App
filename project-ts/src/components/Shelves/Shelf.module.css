@@ -8,7 +8,7 @@
 
 .sectionTitle{
   font-family: 'Roboto', sans-serif;
-  margin-left: 6.5%;
+  margin-left: 9%;
 }
 
 .container{
@@ -25,14 +25,18 @@
   align-items: center;
   border-radius: 3%;
   background-color: white;
-  margin: 2% 2% 2% 2%;
+  margin: 1% 2% 2% 4%;
   padding: 2% 2% 2% 2%;
   width: 275px;
-  
+  box-shadow: 8px 8px 8px #a1d5aa;
+  transition: transform 0.5s ease;
+}
+.card:hover{
+  transform: scale(1.1);
 }
 .card-info{
-  width: 245px;
-  height: 245px;
+  width: 240px;
+  height: 240px;
   background-color: white;
 }
 
@@ -51,6 +55,7 @@ img {
   font-weight: 400;
   line-height: 150%;
   margin-top: 1rem;
+  text-align: center;
 }
 
 .item{
@@ -65,7 +70,7 @@ img {
   font-size: 1rem;
 }
 
-.arrowBack, .arrowForward{
+.arrow{
   margin: 20px;
   align-self: center;
   cursor: pointer;
@@ -90,15 +95,24 @@ img {
   color: white;
 }
 
-.plusCircle{
-  font-size: 3rem;
-  color: #F25050;
-  
+
+.addItemBtn{
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: #F25050;
+  color: white;
+  width: 120px;
+  border: 0;
+  border-radius: 20px;
+  padding: 5px 5px 5px 5px;
+  margin-left: 2%;
 }
-.plusCircle:hover{
-  transform: scale(1.1);
-  transition: 0.s;
-  color: #e34646;
+.addItemBtn:hover{
+  transition: 0.5s;
+  background-color: #e34646;
   cursor: pointer;
 }
 
+.titleAndBtn{
+  display: flex;
+}

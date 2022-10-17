@@ -5,7 +5,7 @@ import Shelf from '../components/Shelves/Shelf';
 function User() {
   return (
     <div className="App">
-      <Bio />
+      <Bio name="Britney Spears" city="Los Angeles, CA" diet="Omnivore" bio="Britney💁🏼‍♀️ 40 years old🥳 I love food🍕🍔 but hate food waste😒🙅🏼‍♀️" />
       <Shelf />
      </div>
   );

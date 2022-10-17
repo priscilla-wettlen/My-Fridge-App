@@ -1,5 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
 import styles from './Header.module.css';
+import { ContextUser } from './ContextUser';
 
 const Header = () => {
   const logo = "my fridge"
@@ -7,15 +9,17 @@ const Header = () => {
   const yourFridge = "Your Fridge"
   const yourFriends = "Your Friends"
   
+  const user = useContext(ContextUser);
+  
   const navigate = useNavigate();
   const handleLogout = () => {
-    navigate('/login')
+    navigate('/')
   }
-
 
   return (
     <header>
       <Link to="/" className={styles.linkStyle}><h1 className={styles.logo}>{logo}</h1></Link>
+      if(logged)
       <nav>
         <ul className={styles.ul}>
           <li className={styles.li}>
@@ -27,6 +31,7 @@ const Header = () => {
           <li className={styles.li}>
             <Link to="/friends" className={styles.linkStyle}>{yourFriends}</Link>
           </li>
+          <li>{user}</li>
           <button className={styles.logout} onClick={handleLogout}>Logout</button>
             </ul>
       </nav>

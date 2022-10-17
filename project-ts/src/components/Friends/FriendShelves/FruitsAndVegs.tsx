@@ -1,30 +1,29 @@
 import { useState, useEffect } from 'react';
-import Card  from '../FriendShelves/Card';
+import Card from './Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
-//import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
-//import { faChevronLeft} from '@fortawesome/free-solid-svg-icons'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { faChevronLeft} from '@fortawesome/free-solid-svg-icons'
 import Modal from '../../Modal/Modal';
 import styles from '../FriendShelves/FriendShelf.module.css';
 
 
 const FruitsAndVegs = () => {
   const [openModal, setOpenModal] = useState(false)
-  const [data, setData] = useState<Array<{
-    id: number, itemName: string, itemAmount: string, itemDescription: string, image: string
+  let [data, setData] = useState<Array<{
+    id: number, itemName: string, itemAmount: string, itemDescription: string, image: any
   }>>([]);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(false); 
+  const [filteredCards, setFilteredCards] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8000/friend-fridge"
+          "https://my-fridge-server.onrender.com/friend-fridge"
         );
         const foods = await response.json();
         setData(foods);
-        console.log(foods)
-        console.log(typeof foods)
+        setFilteredCards(foods)
       } catch (e) {
         setError(true);
       };
@@ -40,20 +39,25 @@ const FruitsAndVegs = () => {
     );
   }
 
+  const handlePrev = () => {setFilteredCards(data.slice(0, 4))}
+  const handleNext = () => {setFilteredCards(data.slice(1,5))}
+
   return (
     <section className={styles.shelf}>
       <h3 className={styles.sectionTitle}>Fruits and Veggies</h3>
-      {openModal && <Modal closeModal={setOpenModal}  item="item" amount="amount" description="description" />}
+      {openModal && <Modal closeModal={setOpenModal} image="image" item="item" amount="amount" description="description" />}
       <div className={styles.container}>
-        {Object.values(data).map((food) => (
+        <>
+          <FontAwesomeIcon icon={faChevronLeft} className={styles.arrow} onClick={handlePrev} />
+          {filteredCards.map((food) => (
           <div className={styles.card} key={food.id}>
             <img width={250} src={food.image} alt="" />
-            <Card item={food.itemName} amount={food.itemAmount} description={food.itemDescription} />
+            <Card image={food.image} item={food.itemName} amount={food.itemAmount} description={food.itemDescription} />
           </div>
-        ))}
+        )).slice(0,4)}
+          <FontAwesomeIcon icon={faChevronRight} className={styles.arrow} onClick={handleNext} />
+        </>
       </div>
-        
-
     </section>
   )
 }

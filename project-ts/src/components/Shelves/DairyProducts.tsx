@@ -1,16 +1,14 @@
 import { useState, useEffect } from 'react';
 import CardDairy  from '../Cards/CardDairy';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
-//import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
-//import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { faPlusCircle, faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import ModalDairy from '../Modal/ModalDairy';
 import styles from './Shelf.module.css';
 
 const DairyProducts = () => {
   const [openModal, setOpenModal] = useState(false)
   const [data, setData] = useState<Array<{
-    id:string, itemName: string, itemAmount:string, itemDescription:string, image:string}>>([]);
+    _id:string, itemName: string, itemAmount:string, itemDescription:string, image:string}>>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -19,7 +17,7 @@ const DairyProducts = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          'http://localhost:3000/dairy'
+          'https://fridge-mongodb.herokuapp.com/api/dairy'
         );
         const foods = await response.json();
         setData(foods);
@@ -51,16 +49,20 @@ const DairyProducts = () => {
 
   return (
     <section className={styles.shelf}>
-      <h3 className={styles.sectionTitle}>Dairy</h3>
-      <FontAwesomeIcon icon={faPlusCircle} className={styles.plusCircle} onClick={() => setOpenModal(true)} />
-      {openModal && <ModalDairy closeModal={setOpenModal} id="id" itemName="item" itemAmount="amount" itemDescription="description" />}
+      <div className={styles.titleAndBtn}>
+        <h3 className={styles.sectionTitle}>Dairy Products</h3>
+        <button className={styles.addItemBtn} onClick={() => setOpenModal(true)}><FontAwesomeIcon icon={faPlusCircle} /> Add item</button>
+        {openModal && <ModalDairy closeModal={setOpenModal} id="id" itemName="itemName" itemAmount="itemAmount" itemDescription="itemDescription" />}
+      </div>
       <div className={styles.container}>
-        {Object.values(data).map((food, index) => (
-          <div className={styles.card} key={index}>
+        <FontAwesomeIcon icon={faChevronLeft} className={styles.arrow} />
+        {Object.values(data).map((food) => (
+          <div className={styles.card} key={food._id}>
             <img width={250} src={food.image} alt="" />
-            <CardDairy id={food.id} itemName={food.itemName} itemAmount={food.itemAmount} itemDescription={food.itemDescription} />
+            <CardDairy id={food._id} itemName={food.itemName} itemAmount={food.itemAmount} itemDescription={food.itemDescription} />
           </div>
         ))}
+        <FontAwesomeIcon icon={faChevronRight} className={styles.arrow} />
       </div>
       </section>
   )

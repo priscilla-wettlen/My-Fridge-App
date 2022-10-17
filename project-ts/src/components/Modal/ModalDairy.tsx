@@ -1,11 +1,10 @@
 import { useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
-import { v4 as uuidv4 } from 'uuid';
 import styles from './Modal.module.css';
 
 
-type ModalDairyProps = {
+type ModalFVProps = {
   id:string,
   itemName: string,
   itemAmount: string,
@@ -15,27 +14,36 @@ type ModalDairyProps = {
 }
 
 
-const ModalDairy = (props: ModalDairyProps) => {
-  const [item, setItem] = useState("")
-  const [amount, setAmount] = useState("")
-  const [description, setDescription] = useState("")
-  const [imageURL, setImageURL] = useState("");
+const ModalDairy = (props: ModalFVProps) => {
+  const [itemName, setItemName] = useState("")
+  const [itemAmount, setItemAmount] = useState("")
+  const [itemDescription, setItemDescription] = useState("")
+  const [image, setImage] = useState("")
   
-  const handleSubmit = async () => {
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault()
+    setTimeout(() => {
+      window.location.reload()
+    }, 200);
+    const postItem = {itemName, itemAmount, itemDescription, image}
+
     try {
-      await fetch("http://localhost:3000/dairy", {
+      let res = await fetch("https://fridge-mongodb.herokuapp.com/api/dairy", {
         method: "POST",
-        body: JSON.stringify({
-          id: uuidv4(),
-          itemName: item,
-          itemAmount: amount,
-          itemDescription: description,
-          image: imageURL
-        }),
+        body: JSON.stringify(postItem),
         headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-         },
-      });  
+            'Content-type': 'application/json',
+         }
+       });
+        
+      let json = await res.json();
+      console.log(res.json())
+
+      if (json === 200 || 201) {
+        console.log('New food added')
+        console.log(res.json())
+      }
+      
     } catch (err) {
       console.log(err);
     }
@@ -48,10 +56,10 @@ const ModalDairy = (props: ModalDairyProps) => {
           <div className={styles.modalUploadContent}>
             <h3 className={styles.title}>Add an item to your Fridge</h3>
           <form className={styles.modalUploadForm} onSubmit={handleSubmit}>
-              <input type="text" value={item} id={styles.inputItem} placeholder="Item" required onChange={(event) => setItem(event.target.value)} />
-              <input type="text" value={amount} id={styles.inputAmount} placeholder="Amount" required onChange={(event) => setAmount(event.target.value)} />
-              <input type="text" value={description} id={styles.inputDescription} placeholder="Description" required onChange={(event) => setDescription(event.target.value)} />
-              <input type="url" value={imageURL} id={styles.inputURL} placeholder="Image URL" required onChange={(event) => setImageURL(event.target.value)} />
+              <input type="text" value={itemName} id={styles.inputItem} placeholder="Item" required onChange={(event) => setItemName(event.target.value)} />
+              <input type="text" value={itemAmount} id={styles.inputAmount} placeholder="Amount" required onChange={(event) => setItemAmount(event.target.value)} />
+              <input type="text" value={itemDescription} id={styles.inputDescription} placeholder="Description" required onChange={(event) => setItemDescription(event.target.value)} />
+              <input type="url" value={image} id={styles.inputURL} placeholder="Image URL" required onChange={(event) => setImage(event.target.value)} />
               <input type="submit" id={styles.Submit} value="Upload Item" />
             </form>
           </div>

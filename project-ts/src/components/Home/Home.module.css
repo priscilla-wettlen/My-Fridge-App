@@ -46,29 +46,20 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   z-index: 1;
-  margin-top: 2%;
 }
 
 .Cover__form__login{
   font-family: 'Roboto', sans-serif;
   width: 200%;
   padding: 10%;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
   border: 0;
-  border-radius: 5px;
+  border-radius: 20px;
   z-index: 1;
 }
 
-.Cover__form__login__2{
-  font-family: 'Roboto', sans-serif;
-  width: 250%;
-  padding: 15%;
-  margin-bottom: 10%;
-  border: 0;
-  border-radius: 5px;
-  z-index: 1;
-}
 
 .p__login{
   font-family: 'Roboto', sans-serif;
@@ -79,9 +70,9 @@
 #Cover__form__btn{
   background-color: #F25050;
   color: white;
-  padding: 10px;
+  padding: 10px 15px 10px 15px;
   border: 1px solid #F25050;
-  border-radius: 5px;
+  border-radius: 20px;
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   font-weight: 500;
@@ -98,22 +89,74 @@
 
 
 .About{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: 'Roboto', sans-serif;
   font-size: 3rem;
   font-weight: 300;
   color: #244020;
-  width: 50%;
   z-index: 1;
-  margin: 2% 2% 2% 8%;
+  margin: 3% 2% 5% 2%;
 }
 
 .About__title{
   margin-bottom: 5%;
+  text-align: center;
+}
+
+.About__children{
+  display: flex;
+  justify-content: space-between;
 }
 
 .About__div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin: 0% 2% 0% 2%;
+  padding: 2% 1% 1% 1%;
   font-size: 1.5rem;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 8px 8px 8px #a1d5aa;
+  transition: transform 0.5s ease;
+}
+.About__div:hover{
+  transform: scale(1.1);
+}
+
+.About__div h4{
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 10%;
+  font-weight: 500;
+  color: #F25050;
+}
+
+.numbers{
+  color: #F25050;
+}
+
+.About__div p{
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 10%;
   margin-bottom: 5%;
+}
+
+.About__children__icons{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 10% 0% 20% 0%;
+}
+
+.About__singleIcon{
+  font-size: 2rem;
+  margin-right: 10%;
+  
 }
 
 .linkStyle{
@@ -124,3 +167,11 @@
   color: #F25050;
   transition-duration: 0.3s;
 }
+
+@media (max-width: 414px) { 
+
+  .Cover{
+  background-image: url('/public/img/strawberries_bg_phone.jpg');
+  }
+
+ }

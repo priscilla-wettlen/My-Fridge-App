@@ -1,32 +1,33 @@
-import React from 'react';
 import './App.css';
+import Guest from './components/Header/Guest';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer'
-import Home from './components/Home/Home'
+import SignUp from './components/Home/SignUp'
 import FriendList from './Pages/FriendList';
 import UserFriend from './Pages/UserFriend';
-import Login from './components/Home/Login';
+import Home from './components/Home/Home';
 import User from './Pages/User';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import {ContextLogin} from './components/Home/ContextLogin'
 
 
 function App() {
-  return (
-    
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/fridge" element={<User />} />
-        <Route path="/friends" element={<FriendList />} />
-        <Route path="friends/:friend" element={<UserFriend />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-      <Footer />
-    </Router>
-  )
-}
+
+    return (
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/fridge" element={<User />} />
+          <Route path="/friends" element={<FriendList />} />
+          <Route path="friends/:friend" element={<UserFriend />} />
+        </Routes>
+        <Footer />
+      </Router>
+    )
+  }
+
 
 export default App;

@@ -3,7 +3,7 @@
 import styles from '../Shelves/Shelf.module.css';
 
 export interface CardProps {
-  id: string,
+  id:string,
   itemName: string,
   itemAmount: string,
   itemDescription: string,
@@ -14,7 +14,7 @@ export interface CardProps {
 const Card = (props: CardProps) => {
   const handleDelete = async (e: React.MouseEvent) => {
     try {
-      await fetch('http://localhost:3000/fruits-vegs/' + props.id, {
+      await fetch('https://fridge-mongodb.herokuapp.com/api/fruit-veg/' + props.id , {
         method: 'DELETE'
       })
       window.location.reload()
@@ -25,11 +25,11 @@ const Card = (props: CardProps) => {
   }
 
   return (
-    <div className={styles.card}>
+    <div className={styles.cardInfo}>
         <h3 className={styles.item}>{props.itemName}</h3>
         <p className={styles.amnt}>{props.itemAmount}</p>
-      <p className={styles.desc}>{props.itemDescription}</p>
-      <button className={styles.requestItem} onClick={handleDelete}>Remove Item</button>
+        <p className={styles.desc}>{props.itemDescription}</p>
+        <button className={styles.requestItem} onClick={handleDelete}>Remove Item</button>
       </div>
   )
 }

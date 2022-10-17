@@ -1,41 +1,32 @@
 import styles from '../Bio/Bio.module.css'; 
-import userList from '../userList.json';
-
 
 type BioProps = {
-    name: string,
-  location?: string,
+  name: string,
   city: string,
-    km: string,
   diet: string,
-    bio:string,
-    url?:string
+  bio:string,
+  url?:string
 } 
-const Profile = (props: BioProps) => {
-  return (
-    <div>
-      <h2 className={styles.name}>{props.name}</h2>
-      <p className={styles.city}>{props.city}</p>
-      <p className={styles.km}>{props.km}</p>
-      <p className={styles.diet}>{props.diet}</p>
-      <p className={styles.bio}>{props.bio}</p>
-    </div>
-  );
-};
 
-const FriendBio = () => {
+
+const FriendBio = (props: BioProps) => {
   return ( 
-    <div className={styles.userBio}>
+    <section className={styles.userBio}>
       <div className={styles.userImage}>
-        <img className={styles.pf} src={`/${userList[1].url}`} alt="" />
+        <img className={styles.pf} src="https://iili.io/sCwkwF.jpg" alt="" />
       </div>
-      <br />
-      <br />
-      <br />
+        <br />
+        <br />
+        <br />
       <div className={styles.userInfo}>
-        <Profile name={userList[1].name} city={userList[1].location.city} km={`${userList[1].location.km} km`} diet={userList[1].diet} bio={userList[1].bio} />
+        <div>
+            <h2 className={styles.name}>{props.name}</h2>
+            <p className={styles.city}>{props.city}</p>
+            <p className={styles.diet}>{props.diet}</p>
+            <p className={styles.bio}>{props.bio}</p>
+        </div>
       </div>
-   </div>
+   </section>
    );
 }
  

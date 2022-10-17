@@ -23,17 +23,19 @@ const Friends = () => {
   const [data, setData] = useState<Array<FriendsProps>>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [searchFriend, setSearchFriend] = useState("")
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       try {
         const response = await fetch(
-          "https://my-json-server.typicode.com/priscilla-silva/FoodsAPI/users"
+          "https://my-fridge-server.onrender.com/friends"
         );
         const users = await response.json();
 
-        setData(users);
+        setData(users)
+
       } catch (e) {
         setError(true);
       } finally {
@@ -59,16 +61,26 @@ const Friends = () => {
       </div>
     );
   }
+
   return ( 
     <div className={styles.FriendList}>
-      <h2 className={styles.FriendListTitle}>Search your friend's fridges!</h2>
+      <div className={styles.search}>
+        <h2 className={styles.FriendListTitle}>Search your friend's fridges!</h2>
+        <input type="text" name="search" className={styles.searchInput} placeholder="🔎 Search by friend's name or diet" onChange={(event) => setSearchFriend(event.target.value)}/>
+      </div>
     <div className={styles.friendsContainer}>
-      {data.map((friend) => (
-        <div className={styles.friendsCard}>
+        {data.filter(((search: { name: string; }) => {
+            if (searchFriend === "") {
+              return search;
+            } else {
+              return search.name.toLowerCase().includes(searchFriend.toLowerCase())
+            }     
+        })).map((friend) => (
+        <div className={styles.friendsCard} key={friend.id}>
           <Link to="/friends/friend" className={styles.link}><img key={friend.id} className={styles.friendsImg} src={friend.img} alt="" />
           <Friend key={friend.id} name={friend.name} diet={friend.diet} /></Link>
         </div>
-      )).slice(1)}
+        ))}
       </div>
     </div>
    );
