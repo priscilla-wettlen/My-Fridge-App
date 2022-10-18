@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import {useNavigate} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import styles from './Modal.module.css';
@@ -20,13 +19,9 @@ const ModalFV = (props: ModalFVProps) => {
   const [itemAmount, setItemAmount] = useState("")
   const [itemDescription, setItemDescription] = useState("")
   const [image, setImage] = useState("")
-  const navigate = useNavigate();
   
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
-    e.preventDefault()
-    setTimeout(() => {
-      navigate("/fridge")
-    }, 200);
+  const handleSubmit = async () => {
+    
     const postItem = {itemName, itemAmount, itemDescription, image}
 
     try {
