@@ -20,8 +20,11 @@ const ModalFV = (props: ModalFVProps) => {
   const [itemDescription, setItemDescription] = useState("")
   const [image, setImage] = useState("")
   
-  const handleSubmit = async () => {
-    
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault()
+    setTimeout(() => {
+      window.location.reload() 
+    },200);
     const postItem = {itemName, itemAmount, itemDescription, image}
 
     try {
