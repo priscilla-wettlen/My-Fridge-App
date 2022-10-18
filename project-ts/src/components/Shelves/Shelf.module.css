@@ -106,11 +106,13 @@ img {
   border-radius: 20px;
   padding: 5px 5px 5px 5px;
   margin-left: 2%;
+  transition: transform 0.2s ease-in-out;
 }
 .addItemBtn:hover{
   transition: 0.5s;
   background-color: #e34646;
   cursor: pointer;
+  transform: scale(1.02);
 }
 
 .titleAndBtn{

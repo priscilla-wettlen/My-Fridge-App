@@ -16,7 +16,7 @@ const FruitsAndVegs = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          'https://fridge-mongodb.herokuapp.com/api/fruit-veg'
+          'https://fridge-mongodb.onrender.com/api/fruit-veg'
         );
         const foods = await response.json();
         setData(foods);

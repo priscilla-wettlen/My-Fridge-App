@@ -5,9 +5,8 @@ import { fa1, fa2, fa3, fa4, faMagnifyingGlass, faCarrot, faPizzaSlice } from '@
 import { faMessage, faFaceLaughBeam, faCartShopping, faHandshake, faUtensils } from '@fortawesome/free-solid-svg-icons';
 import styles from './Home.module.css'
 
-
 const Home = () => {
-  const [details, setDetails] = useState({ email: "", password: "" })
+  const [details, setDetails] = useState({ email:"", password:"" })
   const [error, setError] = useState("")
   const navigate = useNavigate();
   const userDetails = ({ loginEmail: "britney@test.com", loginPassword: "user123" })
@@ -18,11 +17,11 @@ const Home = () => {
     if (details.email === userDetails.loginEmail && details.password === userDetails.loginPassword) {
       navigate("/fridge")
     } else if (details.email === "" || details.password === "") {
-        setError("Please enter your email and password");
+      setError("Please enter your email and password")
       } else {
-        setError("Incorrect email and/or password");
-      }
-        
+      setError("Incorrect email and/or password")
+    }    
+      
   }
   
     return (

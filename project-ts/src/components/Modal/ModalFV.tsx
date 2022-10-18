@@ -28,7 +28,7 @@ const ModalFV = (props: ModalFVProps) => {
     const postItem = {itemName, itemAmount, itemDescription, image}
 
     try {
-      let res = await fetch("https://fridge-mongodb.herokuapp.com/api/fruit-veg", {
+      await fetch("https://fridge-mongodb.onrender.com/api/fruit-veg", {
         method: "POST",
         body: JSON.stringify(postItem),
         headers: {
@@ -36,13 +36,6 @@ const ModalFV = (props: ModalFVProps) => {
          }
        });
         
-      let json = await res.json();
-      console.log(res.json())
-
-      if (json === 200 || 201) {
-        console.log('New food added')
-        console.log(res.json())
-      }
       
     } catch (err) {
       console.log(err);

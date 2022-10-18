@@ -28,7 +28,7 @@ const ModalMisc = (props: ModalMiscProps) => {
     const postItem = {itemName, itemAmount, itemDescription, image}
 
     try {
-      let res = await fetch("https://fridge-mongodb.herokuapp.com/api/misc", {
+      let res = await fetch("https://fridge-mongodb.onrender.com/api/misc", {
         method: "POST",
         body: JSON.stringify(postItem),
         headers: {

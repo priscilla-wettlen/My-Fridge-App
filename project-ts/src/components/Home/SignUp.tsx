@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { v4 as uuidv4 } from 'uuid';
 import styles from './Home.module.css'
 
 
@@ -10,30 +9,27 @@ const SignUp = () => {
   const [lastName, setLastName] = useState("")
   const [registerEmail, setRegisterEmail] = useState("")
   const [registerPassword, setRegisterPassword] = useState("")
+  const [success, setSuccess] = useState("")
 
   let navigate = useNavigate();
 
   const register = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
+    setSuccess("Welcome to MyFridge! You be redirected to the login shortly...")
+    setTimeout(() => {
+      navigate("/")
+    }, 2000);
+
+    const postNewUser = { firstName, lastName, registerEmail, registerPassword }
+    
     try {
-      let res = await fetch("https://my-fridge-server.onrender.com/newUser", {
+      await fetch("https://fridge-mongodb.onrender.com/api/new-user", {
         method: "POST",
-        body: JSON.stringify({
-          id: uuidv4(),
-          first_name: firstName,
-          last_name: lastName,
-          email: registerEmail,
-          password: registerPassword,
-        }),
+        body: JSON.stringify(postNewUser),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
          },
       });
-      if (res.status === 200 || 201) {
-        navigate("/")
-      } else {
-        console.log(`ERROR ${res.status}`)
-      }
     } catch (err) {
       console.log(err);
     }
@@ -49,6 +45,8 @@ const SignUp = () => {
           <p className={styles.p__foodhero}>Sign up for My Fridge today to become a food hero. It's free!</p>
         </div>
         <div className={styles.Cover__form}>
+          <p className={styles.successMsg}>{success}</p>
+          <br />
           <form className={styles.Cover__form} onSubmit={register}>
             <input type="text" name="firstname" className={styles.Cover__form__login} placeholder="First name" onChange={(e)=> setFirstName(e.target.value)} />
             <input type="text" name="lastname" className={styles.Cover__form__login} placeholder="Last name" onChange={(e)=> setLastName(e.target.value)} />

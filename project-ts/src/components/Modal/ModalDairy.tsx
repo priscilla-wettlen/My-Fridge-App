@@ -28,7 +28,7 @@ const ModalDairy = (props: ModalFVProps) => {
     const postItem = {itemName, itemAmount, itemDescription, image}
 
     try {
-      let res = await fetch("https://fridge-mongodb.herokuapp.com/api/dairy", {
+      let res = await fetch("https://fridge-mongodb.onrender.com/api/dairy", {
         method: "POST",
         body: JSON.stringify(postItem),
         headers: {

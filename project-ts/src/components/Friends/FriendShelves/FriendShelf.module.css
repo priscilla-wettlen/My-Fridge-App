@@ -29,11 +29,6 @@
   padding: 2% 2% 2% 2%;
   width: 275px;
   box-shadow: 8px 8px 8px #a1d5aa;
-  transition: transform 0.5s ease;
-}
-
-.card:hover{
-  transform: scale(1.1);
 }
 
 .card-info{

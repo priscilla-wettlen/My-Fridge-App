@@ -17,7 +17,7 @@ const DairyProducts = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          'https://fridge-mongodb.herokuapp.com/api/dairy'
+          'https://fridge-mongodb.onrender.com/api/dairy'
         );
         const foods = await response.json();
         setData(foods);
@@ -34,7 +34,7 @@ const DairyProducts = () => {
   if (loading) {
     return (
       <div className="App">
-        <p className={styles.Msg}>Loading friends...</p>
+        <p className={styles.Msg}>Loading foods...</p>
       </div>
     );
   }

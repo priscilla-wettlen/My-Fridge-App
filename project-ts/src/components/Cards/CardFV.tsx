@@ -1,5 +1,3 @@
-//import React, { useState, useEffect} from 'react';
-//import ModalUpload from '../Modal/ModalFV';
 import styles from '../Shelves/Shelf.module.css';
 
 export interface CardProps {
@@ -14,7 +12,7 @@ export interface CardProps {
 const Card = (props: CardProps) => {
   const handleDelete = async (e: React.MouseEvent) => {
     try {
-      await fetch('https://fridge-mongodb.herokuapp.com/api/fruit-veg/' + props.id , {
+      await fetch('https://fridge-mongodb.onrender.com/api/fruit-veg/' + props.id , {
         method: 'DELETE'
       })
       window.location.reload()

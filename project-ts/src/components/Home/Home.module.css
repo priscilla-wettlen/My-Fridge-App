@@ -61,7 +61,7 @@
 }
 
 
-.p__login{
+.p__login, .successMsg{
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   z-index: 1;
@@ -167,6 +167,7 @@
   color: #F25050;
   transition-duration: 0.3s;
 }
+
 
 @media (max-width: 414px) { 
 
