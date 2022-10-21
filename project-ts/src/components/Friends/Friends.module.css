@@ -1,5 +1,5 @@
 .FriendListTitle{
-  margin: 2%;
+  margin: 4% 2% 2% 2%;
   font-family: 'Roboto', sans-serif;
   color: #244020;
 }
@@ -63,6 +63,43 @@ color: #244020;
   width: 500px;
   border: 0;
   border-radius: 50px;
-  margin: 2% 0% 2% 2%;
+  margin: 4% 0% 2% 2%;
   padding: 10px;
+}
+
+@media only screen and (max-width: 400px) {
+
+  .friendsContainer{
+  padding: 2%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+  .friendsCard{
+  display: flex;
+  flex-direction: row;
+  font-family: 'Roboto', sans-serif;
+  color: #244020;
+  font-size: 1rem;
+  padding-bottom: 10%;
+  margin: 10% 10% 5% 10%;
+}
+
+.friendsImg{
+  border-radius: 50%;
+  margin-bottom: 3%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.searchInput{
+  width: 250px;
+  border: 0;
+  border-radius: 50px;
+  margin: 6% 0% 2% 2%;
+  padding: 10px;
+}
+
+
 }

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
 .Cover{
   position: relative;
   background-image: url('/public/img/strawberries_bg.jpg');
@@ -169,10 +170,190 @@
 }
 
 
+
+
+ @media only screen and (max-width: 820px) {
+
+  .Cover{
+  background-image: url('/public/img/strawberries_bg_phone.jpg');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+}
+
+  .Cover__info{
+  font-family: 'Roboto', sans-serif;
+  font-size: 4rem;
+  font-weight: 300;
+  color: #244020;
+  z-index: 1;
+  margin:  25% 20% 5% 20%;
+  text-align: center;
+}
+
+   .p__foodhero{
+  font-size: 1.5rem;
+  font-weight: 400;
+  width: 90%;
+  margin-top: 10%;
+  margin-bottom: 2%;
+}
+
+  .Cover__form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.Cover__form__login{
+  font-family: 'Roboto', sans-serif;
+  width: 180%;
+  padding: 10%;
+  margin: 0% 0% 15% 0%;
+  border: 0;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.Cover__form__signup{
+  font-family: 'Roboto', sans-serif;
+  width: 180%;
+  padding: 10%;
+  margin: 0% 0% 15% 0%;
+  border: 0;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.About{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 3rem;
+  font-weight: 300;
+  color: #244020;
+  z-index: 1;
+  margin: 3% 2% 5% 2%;
+}
+
+.About__children{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.About__div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin: 2% 2% 4% 2%;
+  padding: 4%;
+  font-size: 1.5rem;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 8px 8px 8px #a1d5aa;
+  transition: transform 0.5s ease;
+}
+ 
+
+}
+
+
+
 @media (max-width: 414px) { 
 
   .Cover{
   background-image: url('/public/img/strawberries_bg_phone.jpg');
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 
- }
+}
+
+  .Cover__info{
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #244020;
+  z-index: 1;
+  margin:  25% 20% 5% 20%;
+  text-align: center;
+}
+
+   .p__foodhero{
+  font-size: 1rem;
+  font-weight: 400;
+  width: 90%;
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+
+  .Cover__form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.Cover__form__login{
+  font-family: 'Roboto', sans-serif;
+  width: 150%;
+  padding: 10%;
+  margin: 0% 0% 20% 0%;
+  border: 0;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.Cover__form__signup{
+  font-family: 'Roboto', sans-serif;
+  width: 150%;
+  padding: 10%;
+  margin: 0% 0% 10% 0%;
+  border: 0;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+
+.About{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #244020;
+  z-index: 1;
+  margin: 10% 2% 5% 2%;
+}
+
+.About__children{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.About__div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  margin: 2% 2% 4% 2%;
+  padding: 4%;
+  font-size: 1.5rem;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 8px 8px 8px #a1d5aa;
+  transition: transform 0.5s ease;
+}
+
+}

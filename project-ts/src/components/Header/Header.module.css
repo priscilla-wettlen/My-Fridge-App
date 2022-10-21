@@ -8,6 +8,7 @@ header{
   position: sticky;
   top: 0;
   z-index: 2;
+  box-shadow: 0px 5px 10px #9a9e9a;
 }
 
 header, .logo, nav, ul, li {
@@ -43,6 +44,7 @@ header, .logo, nav, ul, li {
   transition-duration: 0.3s;
 }
 
+
 .linkStyle{
   color: #244020;
    text-decoration: none;
@@ -68,5 +70,64 @@ header, .logo, nav, ul, li {
 .logout:hover{
   background-color: #e34646;
   color: white;
+}
+
+
+
+/* Hamburger menu */
+
+ul{
+  list-style: none;
+}
+
+.menuNav {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  margin-top: 2%;
+  overflow-y: hidden;
+  list-style: none;
+  position: fixed;
+  top: 0;
+  background: none;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 0;
+  overflow: hidden;
+  max-width: 100%;
+  overflow-x: hidden;
+  z-index: 1;
+}
+
+.toggleBtn{
+  background-color: white;
+  border: 0;
+  cursor: pointer;
+}
+
+.menuBtn{
+  font-size: 1.5rem;
+}
+
+.closeBtn{
+   position: absolute;
+   top: 5%;
+  font-size: 1rem;
+  margin-left: 150px;
+}
+
+.li_r{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  line-height: 150%;
+  padding-right: 20px;
+  color: #244020;
+  text-decoration: none;
+  cursor: pointer;
+}
+.li_r:hover{
+  color: #F25050;
+  transition-duration: 0.3s;
 }
 

@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Header.module.css';
+import HamburgerNav from './HamburgerNav';
 
 const Header = () => {
   const logo = "my fridge"
@@ -8,13 +9,18 @@ const Header = () => {
   const yourFriends = "Your Friends"
   const aboutMyFridge = "About My Fridge"
   const navigate = useNavigate();
-  const handleLogout = () => {
-    navigate('/')
-  }
+  const handleLogout = () => { navigate('/') }
+
+  const mediaQuery = window.matchMedia('(min-width: 821px)')
+  const mediaQueryTab = window.matchMedia('(max-width: 820px)')
+  
 
 
-  return (
-    <header>
+
+
+  if (mediaQuery.matches) {
+    return (
+      <header>
       <Link to="/" className={styles.linkStyle}><h1 className={styles.logo}>{logo}</h1></Link>
       <nav>
         <ul className={styles.ul}>
@@ -22,7 +28,7 @@ const Header = () => {
             <Link to="/" className={styles.linkStyle}>{home}</Link>
           </li>
           <li className={styles.li}>
-            <a href='#about'className={styles.linkStyle}>{aboutMyFridge}</a>
+            <a href='#about' className={styles.linkStyle}>{aboutMyFridge}</a>
           </li>
           <li className={styles.li}>
             <Link to="/fridge" className={styles.linkStyle}>{yourFridge}</Link>
@@ -34,7 +40,22 @@ const Header = () => {
         </ul>
       </nav>
     </header>
-  )
+    )
+  } else if(mediaQueryTab.matches) {
+    return (
+      <HamburgerNav />
+    ) 
+  } 
+
+    
+  
+
+
+
+
+
+
+  
 }
  
 export default Header;

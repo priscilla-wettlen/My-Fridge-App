@@ -39,3 +39,41 @@
 .userInfo{
   width: 300px;
 }
+
+
+
+
+@media only screen and (max-width: 400px) {
+  
+  .userBio{
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.name, .city, .km, .diet, .bio{
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 2% 0% 0% 35%;
+}
+
+.name{
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.userImage{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.pf{
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+}
+
+}

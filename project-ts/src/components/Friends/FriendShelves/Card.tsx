@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import { useState} from 'react';
 import Modal from '../../Modal/Modal';
 import styles from './FriendShelf.module.css';
-
 
 type CardProps = {
   id?: string,
@@ -14,6 +13,7 @@ type CardProps = {
 const Card = (props: CardProps) => {
   const [openModal, setOpenModal] = useState(false)
 
+
   return (
     <>
     <div className={styles.cardInfo}>
@@ -22,7 +22,7 @@ const Card = (props: CardProps) => {
         <p className={styles.desc}>{props.description}</p>
     </div>
     <button className={styles.requestItem} onClick={() => setOpenModal(true)}>Request Item</button>
-      {openModal && <Modal closeModal={setOpenModal} image={props.image} item={props.item} amount={props.amount} description={props.description} />}
+      {openModal && <Modal closeModal={setOpenModal} image={props.image} item={props.item} amount={props.amount} description={props.description} requested={0} />}
     </>
   )
 }
