@@ -98,7 +98,6 @@
   font-weight: 300;
   color: #244020;
   z-index: 1;
-  margin: 3% 2% 5% 2%;
 }
 
 .About__title{
@@ -170,6 +169,41 @@
 }
 
 
+.About__bottomline{
+  font-size: 2rem;
+  margin: 10% 5% 3% 5%;
+  font-weight: 500;
+}
+
+.About__div__data{
+  background-color: white;
+  top:0;
+  left: 0;
+  right: 0;
+  margin:0% 0% 5% 0%;
+  padding: 10% 5% 10% 5%;
+  height: 100vh;
+}
+
+.About__data{
+  font-size: 4rem;
+  margin: 2% 2% 2% 2%;
+  line-height: 150%;
+  font-weight: 300;
+}
+.About__data_2{
+  font-size: 1rem;
+  margin: 10% 2% 2% 2%;
+  line-height: 150%;
+  font-weight: 400;
+}
+
+.highlight{
+  color: #F25050;
+  font-weight: 400;
+}
+
+
 
 
  @media only screen and (max-width: 820px) {
@@ -238,7 +272,7 @@
   font-weight: 300;
   color: #244020;
   z-index: 1;
-  margin: 3% 2% 5% 2%;
+
 }
 
 .About__children{
@@ -260,7 +294,40 @@
   box-shadow: 8px 8px 8px #a1d5aa;
   transition: transform 0.5s ease;
 }
- 
+
+.About__bottomline{
+  font-size: 2rem;
+  margin-top: 5%;
+  padding: 2%;
+  font-weight: 400;
+  text-align: center;
+}
+
+
+.About__div__data{
+  background-color: white;
+  top:0;
+  left: 0;
+  right: 0;
+  margin:0% 0% 5% 0%;
+  padding: 10% 5% 10% 5%;
+  height: 100vh;
+}
+
+.About__data{
+  font-size: 4rem;
+  margin: 2% 2% 2% 2%;
+  line-height: 150%;
+  font-weight: 300;
+}
+
+.About__data_2{
+  font-size: 1.2rem;
+  margin: 15% 2% 2% 2%;
+  line-height: 150%;
+  font-weight: 400;
+}
+
 
 }
 
@@ -333,7 +400,6 @@
   font-weight: 300;
   color: #244020;
   z-index: 1;
-  margin: 10% 2% 5% 2%;
 }
 
 .About__children{
@@ -355,5 +421,37 @@
   box-shadow: 8px 8px 8px #a1d5aa;
   transition: transform 0.5s ease;
 }
+
+.About__bottomline{
+  font-size: 2rem;
+  margin: 15% 5% 0% 5%;
+  line-height: 150%;
+  font-weight: 400;
+}
+
+
+.About__div__data{
+  background-color: white;
+  top:0;
+  left: 0;
+  right: 0;
+  margin:0% 0% 5% 0%;
+  padding: 10%;
+  height: 100vh;
+}
+
+.About__data{
+  font-size: 2.2rem;
+  margin: 15% 2% 15% 2%;
+  font-weight: 300;
+}
+
+.About__data_2{
+  font-size: 0.8rem;
+  margin: 2% 2% 2% 2%;
+  line-height: 150%;
+  font-weight: 400;
+}
+
 
 }

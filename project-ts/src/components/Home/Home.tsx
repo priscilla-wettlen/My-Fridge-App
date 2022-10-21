@@ -43,7 +43,12 @@ const Home = () => {
           </div>
         </section>
         <section id="about" className={styles.About}>
-          <h4 className={styles.About__title}>How it works</h4>
+          <div className={styles.About__div__data}>
+            <p className={styles.About__data}>Did you know that the amount of food that goes to waste only in Sweden <span className={styles.highlight}>could 
+              fill the Ericsson Globe Arena four times?</span> Let us change that and start a <span className={styles.highlight}>food revolution!</span></p>
+            <p className={styles.About__data_2}>Source: IVL Swedish Environmental Research Institute</p>
+          </div>
+          <h4 className={styles.About__title}>Here's how it works</h4>
             <div className={styles.About__children}>
             <div className={styles.About__div}>
               <FontAwesomeIcon icon={fa1} className={styles.numbers} />
@@ -83,6 +88,7 @@ const Home = () => {
               </div>
             </div>
           </div>
+          <p className={styles.About__bottomline}>Join the food revolution and save hundreds of food items from going to waste!</p>
         </section>
       </>
     )
