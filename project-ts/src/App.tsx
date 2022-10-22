@@ -8,8 +8,8 @@ import Home from './components/Home/Home';
 import User from './Pages/User';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
 
+function App() {
     return (
       <Router>
         <Header />

@@ -69,11 +69,11 @@ const Friends = () => {
         <input type="text" name="search" className={styles.searchInput} placeholder="🔎 Search by friend's name or diet" onChange={(event) => setSearchFriend(event.target.value)}/>
       </div>
     <div className={styles.friendsContainer}>
-        {data.filter(((search: { name: string; }) => {
+        {data.filter(((search: { name: string, diet:string }) => {
             if (searchFriend === "") {
               return search;
             } else {
-              return search.name.toLowerCase().includes(searchFriend.toLowerCase())
+              return search.name.toLowerCase().includes(searchFriend.toLowerCase()) || search.diet.toLowerCase().includes(searchFriend.toLowerCase())
             }     
         })).map((friend) => (
         <div className={styles.friendsCard} key={friend.id}>

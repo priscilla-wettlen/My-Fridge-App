@@ -108,6 +108,7 @@ ul{
 
 .menuBtn{
   font-size: 1.5rem;
+  color:#244020
 }
 
 .closeBtn{
@@ -115,6 +116,7 @@ ul{
    top: 5%;
   font-size: 1rem;
   margin-left: 150px;
+  color:#244020
 }
 
 .li_r{
