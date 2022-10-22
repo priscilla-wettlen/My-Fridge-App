@@ -11,6 +11,7 @@ const ReadyToEat = () => {
     _id:string, itemName: string, itemAmount:string, itemDescription:string, image:string}>>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [filteredCards, setFilteredCards] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,6 +22,7 @@ const ReadyToEat = () => {
         );
         const foods = await response.json();
         setData(foods);
+        setFilteredCards(foods)
       } catch (e) {
         setError(true);
       } finally {
@@ -46,7 +48,13 @@ const ReadyToEat = () => {
       </div>
     );
   }
-  return (
+
+  const handlePrev = () => { setFilteredCards(data.slice(0, 4)) }
+  const handleNext = () => { setFilteredCards(data.slice(1, 5)) }
+
+
+  if (Object.keys(filteredCards).length > 0) {
+   return(
     <section className={styles.shelf}>
       <div className={styles.titleAndBtn}>
         <h3 className={styles.sectionTitle}>Miscellaneous</h3>
@@ -54,17 +62,34 @@ const ReadyToEat = () => {
         {openModal && <ModalReady closeModal={setOpenModal} id="id" itemName="itemName" itemAmount="itemAmount" itemDescription="itemDescription" />}
       </div>
       <div className={styles.container}>
-        <FontAwesomeIcon icon={faChevronLeft} className={styles.arrow} />
-        {Object.values(data).map((food) => (
-          <div className={styles.card} key={food._id}>
-            <img width={250} src={food.image} alt="" />
-            <CardMisc id={food._id} itemName={food.itemName} itemAmount={food.itemAmount} itemDescription={food.itemDescription} />
-          </div>
-        ))}
-        <FontAwesomeIcon icon={faChevronRight} className={styles.arrow} />
+          <FontAwesomeIcon icon={faChevronLeft} className={styles.arrow} onClick={handlePrev} />
+        {filteredCards && filteredCards.map((food) => (
+            <div className={styles.card} key={food._id}>
+              <img width={250} src={food.image} alt="" />
+              <CardMisc id={food._id} itemName={food.itemName} itemAmount={food.itemAmount} itemDescription={food.itemDescription} />
+            </div> 
+        )).slice(0,4)}
+        <FontAwesomeIcon icon={faChevronRight} className={styles.arrow} onClick={handleNext} />
       </div>
-      </section>
+    </section>
   )
+  }
+  
+  if (Object.keys(filteredCards).length === 0) {
+    return(
+    <section className={styles.shelf}>
+      <div className={styles.titleAndBtn}>
+        <h3 className={styles.sectionTitle}>Miscellaneous</h3>
+        <button className={styles.addItemBtn} onClick={() => setOpenModal(true)}><FontAwesomeIcon icon={faPlusCircle} /> Add item</button>
+        {openModal && <ModalReady closeModal={setOpenModal} id="id" itemName="itemName" itemAmount="itemAmount" itemDescription="itemDescription" />}
+      </div>
+      <div className={styles.container}>
+          <p className={styles.empty}>Your shelf is empty 😞 Click on "Add item" to add some foods!</p>
+
+      </div>
+    </section>
+  )
+}
 }
 
 export default ReadyToEat;

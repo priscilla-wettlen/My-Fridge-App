@@ -11,6 +11,13 @@
   margin-left: 9%;
 }
 
+.empty{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  margin: 5% 5% 5% 8%;
+  color: #80a07c;
+}
+
 .container{
   display: flex;
   justify-content:flex-start;
@@ -118,3 +125,4 @@ img {
 .titleAndBtn{
   display: flex;
 }
+
