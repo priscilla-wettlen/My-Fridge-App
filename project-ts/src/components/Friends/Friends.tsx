@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Friends.module.css';
+import { ColorRing } from 'react-loader-spinner';
 
 type FriendsProps = {
   id?: number,
@@ -48,7 +49,16 @@ const Friends = () => {
 
   if (loading) {
     return (
-      <div className="App">
+      <div className={styles.Loader}>
+        <ColorRing
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="blocks-loading"
+          wrapperStyle={{}}
+          wrapperClass="blocks-wrapper"
+          colors={['#80C342', '#66BC46', '#47B649', '#118B44', '#118B44']}
+        />
         <p className={styles.Msg}>Loading friends...</p>
       </div>
     );

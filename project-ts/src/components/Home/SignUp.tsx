@@ -51,17 +51,18 @@ const SignUp = () => {
           <p className={styles.successMsg}>{success}</p>
           <br />
           <form className={styles.Cover__form} onSubmit={register}>
-            <input type="text" name="firstname" className={styles.Cover__form__signup} placeholder="First name" onChange={(e)=> setFirstName(e.target.value)} />
-            <input type="text" name="lastname" className={styles.Cover__form__signup} placeholder="Last name" onChange={(e)=> setLastName(e.target.value)} />
-            <input type="email" name="email" className={styles.Cover__form__signup} placeholder="E-mail address" onChange={(e)=> setRegisterEmail(e.target.value)} />
-            <input type="password" name="password" className={styles.Cover__form__signup} placeholder="Password" onChange={(e)=> setRegisterPassword(e.target.value)} />
+            <input type="text" name="firstname" className={styles.Cover__form__login} placeholder="First name" onChange={(e)=> setFirstName(e.target.value)} />
+            <input type="text" name="lastname" className={styles.Cover__form__login} placeholder="Last name" onChange={(e)=> setLastName(e.target.value)} />
+            <input type="email" name="email" className={styles.Cover__form__login} placeholder="E-mail address" onChange={(e)=> setRegisterEmail(e.target.value)} />
+            <input type="password" name="password" className={styles.Cover__form__login} placeholder="Password" onChange={(e)=> setRegisterPassword(e.target.value)} />
             <input type="submit" value="SIGNUP" id={styles.Cover__form__btn} />
           </form>
           <br />
         </div>
       </section>
       <section id="about" className={styles.About}>
-          <h4 className={styles.About__title}>How it works</h4>
+        <br />
+          <h4 className={styles.About__title}>Here's how it works</h4>
             <div className={styles.About__children}>
             <div className={styles.About__div}>
               <FontAwesomeIcon icon={fa1} className={styles.numbers} />

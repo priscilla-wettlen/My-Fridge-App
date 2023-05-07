@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusCircle, faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import ModalDairy from '../Modal/ModalDairy';
 import styles from './Shelf.module.css';
+import { ColorRing } from 'react-loader-spinner';
 
 const DairyProducts = () => {
   const [openModal, setOpenModal] = useState(false)
@@ -35,7 +36,16 @@ const DairyProducts = () => {
 
   if (loading) {
     return (
-      <div className="App">
+      <div className={styles.Loader}>
+        <ColorRing
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="blocks-loading"
+          wrapperStyle={{}}
+          wrapperClass="blocks-wrapper"
+          colors={['#80C342', '#66BC46', '#47B649', '#118B44', '#118B44']}
+        />
         <p className={styles.Msg}>Loading foods...</p>
       </div>
     );
@@ -59,7 +69,8 @@ const DairyProducts = () => {
         <h3 className={styles.sectionTitle}>Dairy Products</h3>
         <button className={styles.addItemBtn} onClick={() => setOpenModal(true)}><FontAwesomeIcon icon={faPlusCircle} /> Add item</button>
         {openModal && <ModalDairy closeModal={setOpenModal} id="id" itemName="itemName" itemAmount="itemAmount" itemDescription="itemDescription" />}
-      </div>
+          </div>
+          <h3 className={styles.foodHero}>Hooray! You have rescued {data.length} dairy items today!🦸‍♀️</h3>
       <div className={styles.container}>
           <FontAwesomeIcon icon={faChevronLeft} className={styles.arrow} onClick={handlePrev} />
         {filteredCards && filteredCards.map((food) => (

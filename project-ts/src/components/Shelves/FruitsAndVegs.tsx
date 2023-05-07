@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusCircle, faChevronRight, faChevronLeft} from '@fortawesome/free-solid-svg-icons';
 import ModalFV from '../Modal/ModalFV';
 import styles from './Shelf.module.css';
+import { ColorRing } from 'react-loader-spinner';
 
 const FruitsAndVegs = () => {
   const [openModal, setOpenModal] = useState(false)
@@ -12,9 +13,12 @@ const FruitsAndVegs = () => {
   }>>([]);
   const [error, setError] = useState(false);
   const [filteredCards, setFilteredCards] = useState([])
+  const [loading, setLoading] =  useState(false)
+
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true)
       try {
         const response = await fetch(
           'https://fridge-mongodb.onrender.com/api/fruit-veg'
@@ -26,10 +30,29 @@ const FruitsAndVegs = () => {
         
       } catch (e) {
         setError(true);
-      };
+      } finally {
+        setLoading(false)
+      }
     }
     fetchData();
   }, []);
+
+  if (loading) {
+    return (
+      <div className={styles.Loader}>
+        <ColorRing
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="blocks-loading"
+          wrapperStyle={{}}
+          wrapperClass="blocks-wrapper"
+          colors={['#80C342', '#66BC46', '#47B649', '#118B44', '#118B44']}
+        />
+        <p className={styles.Msg}>Loading foods...</p>
+      </div>
+    );
+  }
 
   if (error) {
     return (
@@ -49,9 +72,10 @@ const FruitsAndVegs = () => {
         <h3 className={styles.sectionTitle}>Fruits and Veggies</h3>
         <button className={styles.addItemBtn} onClick={() => setOpenModal(true)}><FontAwesomeIcon icon={faPlusCircle} /> Add item</button>
         {openModal && <ModalFV closeModal={setOpenModal} id="id" itemName="itemName" itemAmount="itemAmount" itemDescription="itemDescription" />}
-      </div>
-      <div className={styles.container}>
-          <FontAwesomeIcon icon={faChevronLeft} className={styles.arrow} onClick={handlePrev} />
+          </div>
+          <h3 className={styles.foodHero}>Hooray! You have rescued {data.length} fruit and veggie items today!🦸‍♀️</h3>
+          <div className={styles.container}>
+            <FontAwesomeIcon icon={faChevronLeft} className={styles.arrow} onClick={handlePrev} />  
         {filteredCards && filteredCards.map((food) => (
             <div className={styles.card} key={food._id}>
               <img width={250} src={food.image} alt="" />

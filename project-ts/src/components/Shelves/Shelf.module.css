@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  
 }
 
 .sectionTitle{
@@ -23,7 +24,6 @@
   justify-content:flex-start;
   max-width: 100%;
   padding: 2%;
-  
 }
 
 .card{
@@ -126,3 +126,20 @@ img {
   display: flex;
 }
 
+.shelfTitle{
+  font-family: 'Roboto', sans-serif;
+  margin: 2% 2% 3% 9%;
+}
+
+.foodHero{
+  font-family: 'Roboto', sans-serif;
+  margin: 2% 2% 0.3% 9%;
+  color:#e34646;
+}
+
+.Loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20%;
+}

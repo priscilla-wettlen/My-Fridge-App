@@ -48,5 +48,3 @@ const Modal = (props: ModalProps) => {
 }
 
 export default Modal;
-
-

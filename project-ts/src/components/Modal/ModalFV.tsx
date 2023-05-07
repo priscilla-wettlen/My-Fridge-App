@@ -22,9 +22,7 @@ const ModalFV = (props: ModalFVProps) => {
   
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault()
-    setTimeout(() => {
-      window.location.reload() 
-    },200);
+    
     const postItem = {itemName, itemAmount, itemDescription, image}
 
     try {
@@ -35,7 +33,12 @@ const ModalFV = (props: ModalFVProps) => {
             'Content-type': 'application/json',
          }
        });
-        
+      setTimeout(() => {
+        window.location.reload() 
+      }, 200);
+
+      
+      
       
     } catch (err) {
       console.log(err);
@@ -65,6 +68,3 @@ const ModalFV = (props: ModalFVProps) => {
 }
 
 export default ModalFV;
-
-
-
