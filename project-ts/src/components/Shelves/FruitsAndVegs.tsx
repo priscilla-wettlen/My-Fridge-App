@@ -21,7 +21,7 @@ const FruitsAndVegs = () => {
       setLoading(true)
       try {
         const response = await fetch(
-          'https://fridge-mongodb.onrender.com/api/fruit-veg'
+          'http://localhost:8000/api/fruit-veg'
         );
         
         const foods = await response.json(); 

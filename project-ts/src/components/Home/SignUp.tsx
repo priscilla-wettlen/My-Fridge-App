@@ -61,6 +61,11 @@ const SignUp = () => {
         </div>
       </section>
       <section id="about" className={styles.About}>
+        <div className={styles.About__div__data}>
+            <p className={styles.About__data}>Did you know that the amount of food that goes to waste only in Sweden <span className={styles.highlight}>could 
+              fill the Avicii Arena four times?</span> Let us change that and start a <span className={styles.highlight}>food revolution!</span></p>
+            <p className={styles.About__data_2}>Source: IVL Swedish Environmental Research Institute</p>
+          </div>
         <br />
           <h4 className={styles.About__title}>Here's how it works</h4>
             <div className={styles.About__children}>

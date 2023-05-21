@@ -19,7 +19,7 @@ const DairyProducts = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          'https://fridge-mongodb.onrender.com/api/dairy'
+          'http://localhost:8000/api/dairy'
         );
         const foods = await response.json();
         setData(foods);

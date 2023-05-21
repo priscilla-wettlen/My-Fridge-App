@@ -31,7 +31,7 @@ const Footer = () => {
             <p className={styles.footerContainerPara}>Contact Us</p>
           </div>
           <div>
-            <p>© MY FRIDGE APP 2022</p>
+            <p>© MY FRIDGE APP 2023</p>
             <p>All rights reserved.</p>
           </div>
         </div>

@@ -9,6 +9,12 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  height: 100vh;
+}
+
+.friendsContainer p{
+  font-family: 'Roboto', sans-serif;
+  color: #244020;
 }
 
 .friendsCard{

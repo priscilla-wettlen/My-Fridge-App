@@ -18,7 +18,7 @@ function App() {
               <Route path="/signup" element={<SignUp />} />
               <Route path="/fridge" element={<User />} />
               <Route path="/friends" element={<FriendList />} />
-              <Route path="friends/:friend" element={<UserFriend />} />
+              <Route path="friends/:id" element={<UserFriend name={''} age={0} diet={''} id={''} />} />
             </Routes>
         <Footer />
       </Router>

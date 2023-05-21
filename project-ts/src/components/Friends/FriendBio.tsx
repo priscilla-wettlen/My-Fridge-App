@@ -1,6 +1,7 @@
 import styles from '../Bio/Bio.module.css'; 
 
 type BioProps = {
+  id?:number,
   name: string,
   city: string,
   diet: string,
@@ -10,6 +11,8 @@ type BioProps = {
 
 
 const FriendBio = (props: BioProps) => {
+  
+  
   return ( 
     <section className={styles.userBio}>
       <div className={styles.userImage}>
