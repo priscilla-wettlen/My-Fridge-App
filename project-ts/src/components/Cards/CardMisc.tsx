@@ -13,7 +13,7 @@ export interface CardProps {
 const Card = (props: CardProps) => {
   const handleDelete = async (e: React.MouseEvent) => {
     try {
-      await fetch('https://fridge-mongodb.onrender.com/api/misc/' + props.id, {
+      await fetch(`http://localhost:8000/api/misc/${props.id}`, {
         method: 'DELETE'
       })
       window.location.reload()

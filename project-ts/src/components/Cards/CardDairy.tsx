@@ -5,14 +5,14 @@ export interface CardProps {
   itemName: string,
   itemAmount: string,
   itemDescription: string,
-  image?: string,
+  image?:string,
 
 }
 
 const Card = (props: CardProps) => {
   const handleDelete = async (e: React.MouseEvent) => {
     try {
-      await fetch('https://fridge-mongodb.onrender.com/api/dairy/' + props.id, {
+      await fetch(`http://localhost:8000/api/dairy/${props.id}`, {
         method: 'DELETE'
       })
       window.location.reload()

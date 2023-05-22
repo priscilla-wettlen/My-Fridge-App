@@ -68,7 +68,7 @@ const DairyProducts = () => {
       <div className={styles.titleAndBtn}>
         <h3 className={styles.sectionTitle}>Dairy Products</h3>
         <button className={styles.addItemBtn} onClick={() => setOpenModal(true)}><FontAwesomeIcon icon={faPlusCircle} /> Add item</button>
-        {openModal && <ModalDairy closeModal={setOpenModal} id="id" itemName="itemName" itemAmount="itemAmount" itemDescription="itemDescription" />}
+        {openModal && <ModalDairy closeModal={setOpenModal} id="id" itemName="itemName" itemAmount="itemAmount" itemDescription="itemDescription" image={''} />}
           </div>
           <h3 className={styles.foodHero}>Hooray! You have rescued {data.length} dairy items today!🦸‍♀️</h3>
       <div className={styles.container}>
@@ -91,7 +91,7 @@ const DairyProducts = () => {
       <div className={styles.titleAndBtn}>
         <h3 className={styles.sectionTitle}>Dairy Products</h3>
         <button className={styles.addItemBtn} onClick={() => setOpenModal(true)}><FontAwesomeIcon icon={faPlusCircle} /> Add item</button>
-        {openModal && <ModalDairy closeModal={setOpenModal} id="id" itemName="itemName" itemAmount="itemAmount" itemDescription="itemDescription" />}
+        {openModal && <ModalDairy closeModal={setOpenModal} id="id" itemName="itemName" itemAmount="itemAmount" itemDescription="itemDescription" image={''} />}
       </div>
       <div className={styles.container}>
           <p className={styles.empty}>Your shelf is empty😞 Click on "Add item" to add some foods!</p>

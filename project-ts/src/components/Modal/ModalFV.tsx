@@ -4,40 +4,42 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import styles from './Modal.module.css';
 
 
-type ModalFVProps = {
+export type ModalProps = {
   id:string,
   itemName: string,
   itemAmount: string,
   itemDescription: string,
-  image?: string,
+  image: string,
   closeModal: (arg:boolean) => void
 }
 
 
-const ModalFV = (props: ModalFVProps) => {
+const ModalFV = (props: ModalProps) => {
   const [itemName, setItemName] = useState("")
   const [itemAmount, setItemAmount] = useState("")
   const [itemDescription, setItemDescription] = useState("")
-  const [image, setImage] = useState("")
+  const [image, setImage] = useState<File | undefined>();
   
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault()
     
-    const postItem = {itemName, itemAmount, itemDescription, image}
+    const formData = new FormData();
+    formData.append('itemName', itemName);
+    formData.append('itemAmount', itemAmount);
+    formData.append('itemDescription', itemDescription);
+    formData.append('image', image);
+    
 
     try {
-      await fetch("https://fridge-mongodb.onrender.com/api/fruit-veg", {
+      const response = await fetch(`http://localhost:8000/api/fruit-veg/`, {
         method: "POST",
-        body: JSON.stringify(postItem),
-        headers: {
-            'Content-type': 'application/json',
-         }
+        body: formData,
        });
       setTimeout(() => {
         window.location.reload() 
       }, 200);
 
-      
+      console.log(response.formData)
       
       
     } catch (err) {
@@ -55,7 +57,13 @@ const ModalFV = (props: ModalFVProps) => {
               <input type="text" value={itemName} id={styles.inputItem} placeholder="Item" required onChange={(event) => setItemName(event.target.value)} />
               <input type="text" value={itemAmount} id={styles.inputAmount} placeholder="Amount" required onChange={(event) => setItemAmount(event.target.value)} />
               <input type="text" value={itemDescription} id={styles.inputDescription} placeholder="Description" required onChange={(event) => setItemDescription(event.target.value)} />
-              <input type="url" value={image} id={styles.inputURL} placeholder="Image URL" required onChange={(event) => setImage(event.target.value)} />
+              <input
+              type="file"
+              name="image"
+              id={styles.inputURL}
+              accept="image"
+              onChange={(event) => setImage(event.target.files[0])}
+            />
             <input type="submit" id={styles.Submit} value="Upload Item" />
             </form>
           </div>
