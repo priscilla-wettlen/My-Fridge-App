@@ -6,7 +6,7 @@ type BioProps = {
   city: string,
   diet: string,
   bio:string,
-  url?:string
+  img?:string
 } 
 
 
@@ -16,7 +16,7 @@ const FriendBio = (props: BioProps) => {
   return ( 
     <section className={styles.userBio}>
       <div className={styles.userImage}>
-        <img className={styles.pf} src="https://iili.io/sCwkwF.jpg" alt="" />
+         <img className={styles.pf} src="https://iili.io/sCwkwF.jpg" alt="" />
       </div>
         <br />
         <br />

@@ -24,7 +24,7 @@ const FruitsAndVegs = () => {
       setLoading(true)
       try {
         const response = await fetch(
-          "https://localhost:8000/friend-fridge"
+          "https://my-fridge-server.onrender.com/friend-fridge"
         );
         const foods = await response.json();
         setData(foods);

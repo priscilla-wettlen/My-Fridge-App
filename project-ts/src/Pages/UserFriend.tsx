@@ -17,7 +17,7 @@ const UserFriend = (props: FriendsProps) => {
       setLoading(true);
       try {
         const response = await fetch(
-          `https://my-json-server.typicode.com/priscilla-silva/FoodsAPI/users`
+          `https://my-fridge-server.onrender.com/friends`
         );
         const users = await response.json();
 
@@ -64,8 +64,10 @@ const UserFriend = (props: FriendsProps) => {
   return ( 
     <div className="App">
       {data.filter((user, index) => user.id.toString() === id).map(user => 
+        <>
         <FriendBio key={user.id} name={user.name} city={user.location} diet={user.diet} bio={`${user.name}💁🏼‍♀️ ${user.age} years old🥳 Love food🥕🍉but hate food waste😒🙅🏼‍♀️`} />
-        )}
+        </>
+      )}
       
       <FriendShelf />
     </div>
