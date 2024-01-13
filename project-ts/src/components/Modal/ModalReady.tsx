@@ -22,7 +22,7 @@ const ModalMisc = (props: ModalProps) => {
     }
 
     try {
-      await fetch(`http://localhost:8000/api/misc/`, {
+      await fetch(`https://fridge-mongodb.onrender.com/api/misc/`, {
         method: "POST",
         body: formData,
        });

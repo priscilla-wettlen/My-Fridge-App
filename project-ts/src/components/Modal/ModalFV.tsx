@@ -31,7 +31,7 @@ const ModalFV = (props: ModalProps) => {
     
 
     try {
-      const response = await fetch(`http://localhost:8000/api/fruit-veg/`, {
+      const response = await fetch(`https://fridge-mongodb.onrender.com/api/fruit-veg/`, {
         method: "POST",
         body: formData,
        });

@@ -9,7 +9,8 @@ export type FriendsProps = {
   age:number,
   location?: string,
   diet: string,
-  img?: string
+  img?: string,
+  quote?:string
 }
 
 const Friend = (props: FriendsProps) => {
@@ -18,6 +19,7 @@ const Friend = (props: FriendsProps) => {
       <h3>{props.name}</h3>
       <p>{props.age}</p>
       <p>{props.diet}</p>
+      quote
     </div>
   )
 }
@@ -115,7 +117,7 @@ const Friends = () => {
                 src={friend.img}
                 alt=""
               />
-              <Friend key={friend.id} name={friend.name} age={friend.age} diet={friend.diet} id={''} />
+              <Friend key={friend.id} name={friend.name} age={friend.age} diet={friend.diet} id={''} quote={friend.quote} />
             
           </div>
         )).slice(1)

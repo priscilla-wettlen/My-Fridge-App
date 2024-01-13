@@ -21,7 +21,7 @@ const ModalDairy = (props: ModalProps) => {
     }
 
     try {
-      await fetch(`http://localhost:8000/api/dairy/`, {
+      await fetch(`https://fridge-mongodb.onrender.com/api/dairy/`, {
         method: "POST",
         body: formData,
        });

@@ -18,10 +18,8 @@ const SignUp = () => {
 
   const register = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    setSuccess("Welcome to MyFridge! You be redirected to the login shortly...")
-    setTimeout(() => {
-      navigate("/")
-    }, 2000);
+    
+    
 
     const postNewUser = { firstName, lastName, registerEmail, registerPassword }
     
@@ -31,10 +29,15 @@ const SignUp = () => {
         body: JSON.stringify(postNewUser),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
-         },
+        },
       });
+      alert("Welcome to MyFridge! You be redirected to the login shortly...")
+      setTimeout(() => {
+        navigate("/")
+      }, 5000);
     } catch (err) {
       console.log(err);
+      //show modal
     }
   };
     
